@@ -4,231 +4,309 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <title>Mundo de Eventos</title>
   </head>
   <body>
-    <header></header>
+    <header class="container header">
+      <!-- Navegación Desktop -->
+      <nav>
+        <ul class="menu-mobile">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Eventos</a></li>
+          <li><a href="#">Crear Evento</a></li>
+          <li><a href="#">Favoritos</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Iniciar Sesión</a></li>
+          <li><a href="#">Crear Cuenta</a></li>
+        </ul>
+        <p class="navbar-logo">MUNDOdeEVENTOS</p>
+
+        <!-- Navegación Mobile -->
+        <div id="navbar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu-desktop">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Eventos</a></li>
+          <li><a href="#">Crear Evento</a></li>
+          <li><a href="#">Favoritos</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Iniciar Sesión</a></li>
+          <li><a href="#">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-text">
+        <h1>Busca, Crea y Comparte tus Eventos</h1>
+        <a class="boton-general" href="">Crea tu cuenta GRATIS!</a>
+      </div>
+      <!-- Buscador de eventos en Home -->
+      <form class="header-buscador">
+        <div class="buscador-box">
+          <label for="by-categoria">Buscar por</label>
+          <!-- Select Armado -->
+          <div class="select" role="select">
+            <span id="select-value">Categoria</span>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+          <div class="options-list">
+            <div class="option">Arte</div>
+            <div class="option">Deporte</div>
+            <div class="option">Música</div>
+            <div class="option">Entretenimiento</div>
+            <div class="option">Entretenimiento</div>
+            <div class="option">Entretenimiento</div>
+          </div>
+        </div>
+        <!-- Por Ciudad -->
+        <div class="buscador-box">
+          <label for="by-city">En</label>
+          <input type="text" id="by-city" name="by-city" />
+        </div>
+        <!-- Por Fecha -->
+        <div class="buscador-box">
+          <label for="by-date">Fecha</label>
+          <input type="text" id="by-date" name="by-date" />
+        </div>
+        <button class="boton-general">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </form>
+    </header>
     <main class="container">
       <div class="tittle-section">
         <h2 class="h2">Últimos Eventos</h2>
         <p class="p">Encuentra aquí los eventos destacados</p>
       </div>
       <section class="container-cards">
-          <article class="event-card1">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-                />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+        <article class="card event-card1">
+          <ion-icon name="heart-outline"></ion-icon>
+          <img src="https://picsum.photos/200" alt="Imagen random" />
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card2">
-            <a href="#">
-              <img
-                src="./static/img/370535.jpg"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card2">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card3">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card3">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card4">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card4">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card5">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card5">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card6">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card6">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card7">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card7">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card8">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card8">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <article class="event-card9">
-            <a href="#">
-              <img
-                src="https://picsum.photos/200"
-                alt="Imagen random"
-                title="Haz click para mas info"
-              />
-            </a>
-            <div class="container-description">
-              <div class="calendar">
-                <h4 class="month">MES</h4>
-                <p class="day">10</p>
-              </div>
-              <div class="description-event">
-                <h4 class="tittle-event">Titulo para este evento</h4>
-                <p class="description">
+          </div>
+        </article>
+        <article class="event-card9">
+          <a href="#">
+            <img
+              src="https://picsum.photos/200"
+              alt="Imagen random"
+              title="Haz click para mas info"
+            />
+          </a>
+          <div class="container-description">
+            <div class="calendar">
+              <h4 class="month">MES</h4>
+              <p class="day">10</p>
+            </div>
+            <div class="description-event">
+              <h4 class="tittle-event">Titulo para este evento</h4>
+              <p class="description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
                 cupiditate!
-                </p>
-                <a href=""><li>Leer más</li></a>
-              </div>
+              </p>
+              <a href=""><li>Leer más</li></a>
             </div>
-          </article>
-          <button><a href="#">VER MAS</a></button>
+          </div>
+        </article>
+        <a href="#" class="boton-general">VER MAS</a>
       </section>
     </main>
     <footer></footer>
+    <script type="module" src="./js/buscador-select.js"></script>
+    <script type="module" src="./js/menu-mobile.js"></script>
   </body>
 </html>
