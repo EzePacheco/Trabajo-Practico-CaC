@@ -54,7 +54,7 @@ nav {
 .header {
   position: relative;
   padding-top: 80px;
-  height: 100dvh;
+  margin-bottom: 120px;
   align-items: center;
   background-image: url("./assets/img/header.png");
   background-repeat: no-repeat;
@@ -62,12 +62,11 @@ nav {
 
 nav .navbar-logo {
   font-family: var(--font-logo);
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 700;
 }
 
-nav .menu-desktop,
-nav .menu-mobile {
+nav .menu-desktop {
   display: flex;
   width: 80%;
   list-style: none;
@@ -78,34 +77,14 @@ nav .menu-mobile {
   padding: 8px 0;
 }
 
-nav .menu-mobile {
-  width: 50%;
-  max-width: 280px;
-  padding: 32px 0;
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  top: 80px;
-  flex-direction: column;
-  background-color: blue;
-  transform: translateY(-150%);
-  transition: transform 1.5s ease;
-}
-
-nav .menu-mobile.show {
-  transform: translateY(0);
-}
-
-nav .menu-desktop li a,
-nav .menu-mobile li a {
+nav .menu-desktop li a {
   position: relative;
   text-decoration: none;
   color: var(--black);
   transition: background-color 0.5s ease;
 }
 
-nav .menu-desktop li a::before,
-nav .menu-mobile li a::before {
+nav .menu-desktop li a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -116,13 +95,11 @@ nav .menu-mobile li a::before {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-nav .menu-desktop li a:hover::before,
-nav .menu-mobile li a:hover::before {
+nav .menu-desktop li a:hover::before {
   opacity: 1;
 }
 
-nav .menu-desktop li:last-of-type a,
-nav .menu-mobile li:last-of-type a {
+nav .menu-desktop li:last-of-type a {
   display: block;
   padding: 16px 24px;
   color: var(--white);
@@ -131,8 +108,7 @@ nav .menu-mobile li:last-of-type a {
   background-color: var(--primary-color);
 }
 
-nav .menu-desktop li:last-of-type a::before,
-nav .menu-mobile li:last-of-type a::before {
+nav .menu-desktop li:last-of-type a::before {
   content: none;
 }
 
@@ -194,6 +170,7 @@ nav #navbar-icon {
 }
 
 .header-text {
+  margin: 120px 0;
   grid-column: 3 / 11;
   display: flex;
   flex-direction: column;
@@ -202,13 +179,13 @@ nav #navbar-icon {
 }
 
 .header-text h1 {
-  font-size: 64px;
+  font-size: 56px;
   color: var(--white);
   text-align: center;
 }
 
 .header-buscador {
-  width: 80%;
+  width: 100%;
   height: 120px;
   background-color: var(--black);
   grid-column: 1/-1;
@@ -218,10 +195,6 @@ nav #navbar-icon {
   justify-content: space-around;
   align-items: center;
   box-shadow: 0px 4px 16px var(--shadow);
-  position: absolute;
-  left: 50%;
-  top: 95%;
-  transform: translate(-50%, -90%);
 }
 
 .buscador-box {
@@ -456,12 +429,45 @@ nav .menu-desktop li:last-of-type a:hover,
   text-align: left;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    padding-top: 80px;
+  }
+
+  .header-text {
+    grid-column: 1 / -1;
+  }
+
+  .header-text h1 {
+    font-size: calc(2rem + 1vw);
+  }
+  nav .navbar-logo {
+    font-size: 24px;
+  }
+
   nav .menu-desktop {
     display: none;
   }
 
   nav #navbar-icon {
     display: block;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 1200px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .header {
+    padding-top: 80px;
+  }
+
+  .header-text {
+    grid-column: 3 / 11;
   }
 }
