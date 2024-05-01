@@ -11,53 +11,46 @@
   --font-logo: "Caveat", cursive;
 }
 
+/* Reset - start */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Selectores de etiquetas */
 body,
 html {
   font-family: var(--font-primary);
   background-color: var(--white);
   color: var(--black);
 }
+/* Reset - end */
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 80px;
-  padding: 0 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--white);
-}
-
-/* Selectores de clase */
+/* General - start */
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  /* grid-template-rows: 50px repeat(3, 1fr) 50px; */
   gap: 16px;
   padding: 0 72px;
 }
+/* General - end */
 
-.header {
-  position: relative;
-  padding-top: 80px;
-  margin-bottom: 120px;
+/* Navbar - start */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  background-image: url("./assets/img/header.png");
-  background-repeat: no-repeat;
+  background-color: var(--white);
 }
 
 nav .navbar-logo {
@@ -66,7 +59,7 @@ nav .navbar-logo {
   font-weight: 700;
 }
 
-nav .menu-desktop {
+nav .navbar-menu {
   display: flex;
   width: 80%;
   list-style: none;
@@ -77,14 +70,14 @@ nav .menu-desktop {
   padding: 8px 0;
 }
 
-nav .menu-desktop li a {
+nav .navbar-menu li a {
   position: relative;
   text-decoration: none;
   color: var(--black);
   transition: background-color 0.5s ease;
 }
 
-nav .menu-desktop li a::before {
+nav .navbar-menu li a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -95,27 +88,27 @@ nav .menu-desktop li a::before {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-nav .menu-desktop li a:hover::before {
+nav .navbar-menu li a:hover::before {
   opacity: 1;
 }
 
-nav .menu-desktop li:last-of-type a {
+nav .navbar-menu li:last-of-type a {
   display: block;
-  padding: 16px 24px;
+  padding: 12px 24px;
   color: var(--white);
   font-weight: 600;
   border-radius: 8px;
   background-color: var(--primary-color);
 }
 
-nav .menu-desktop li:last-of-type a::before {
+nav .navbar-menu li:last-of-type a::before {
   content: none;
 }
 
 nav #navbar-icon {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   position: relative;
   margin-top: 16px;
   transform: rotate(0deg);
@@ -126,7 +119,7 @@ nav #navbar-icon {
 #navbar-icon span {
   display: block;
   position: absolute;
-  height: 6px;
+  height: 4px;
   width: 100%;
   background: var(--primary-color);
   border-radius: 8px;
@@ -142,15 +135,15 @@ nav #navbar-icon {
 
 #navbar-icon span:nth-child(2),
 #navbar-icon span:nth-child(3) {
-  top: 14px;
+  top: 12px;
 }
 
 #navbar-icon span:nth-child(4) {
-  top: 28px;
+  top: 24px;
 }
 
 #navbar-icon.open span:nth-child(1) {
-  top: 14px;
+  top: 12px;
   width: 0%;
   left: 50%;
 }
@@ -164,9 +157,22 @@ nav #navbar-icon {
 }
 
 #navbar-icon.open span:nth-child(4) {
-  top: 14px;
+  top: 12px;
   width: 0%;
   left: 50%;
+}
+/* Navbar - end */
+
+/* Header Index - start */
+.header {
+  position: relative;
+  padding-top: 60px;
+  margin-bottom: 120px;
+  align-items: center;
+  background-image: url("./assets/img/header.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .header-text {
@@ -184,6 +190,7 @@ nav #navbar-icon {
   text-align: center;
 }
 
+/* Buscador Header Desktop - start */
 .header-buscador {
   width: 100%;
   height: 120px;
@@ -268,7 +275,6 @@ nav #navbar-icon {
   padding: 4px 16px;
 }
 
-/* Botones en General */
 .header-buscador button {
   padding: 16px;
   display: flex;
@@ -278,6 +284,7 @@ nav #navbar-icon {
   color: var(--white);
   font-size: 1.5rem;
 }
+/* Buscador Header Desktop - end */
 
 .boton-general {
   display: block;
@@ -293,10 +300,11 @@ nav #navbar-icon {
   transition: all 0.5s ease;
 }
 
-nav .menu-desktop li:last-of-type a:hover,
+nav .navbar-menu li:last-of-type a:hover,
 .boton-general:hover {
   background-color: var(--primary-color-hover);
 }
+/* Header Index - end */
 
 /* Listado de Cards */
 .container-cards {
@@ -427,47 +435,4 @@ nav .menu-desktop li:last-of-type a:hover,
   margin-left: 15px;
   padding: 5px;
   text-align: left;
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .header {
-    padding-top: 80px;
-  }
-
-  .header-text {
-    grid-column: 1 / -1;
-  }
-
-  .header-text h1 {
-    font-size: calc(2rem + 1vw);
-  }
-  nav .navbar-logo {
-    font-size: 24px;
-  }
-
-  nav .menu-desktop {
-    display: none;
-  }
-
-  nav #navbar-icon {
-    display: block;
-  }
-}
-
-@media (min-width: 781px) and (max-width: 1200px) {
-  .container {
-    padding: 0 32px;
-  }
-
-  .header {
-    padding-top: 80px;
-  }
-
-  .header-text {
-    grid-column: 3 / 11;
-  }
 }
