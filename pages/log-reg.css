@@ -1,0 +1,88 @@
+main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--black);
+}
+
+form {
+  position: relative;
+  width: 320px;
+  background-color: red;
+  padding: 32px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  border-radius: 8px;
+  font-family: var(--font-text);
+}
+
+form ion-icon {
+  position: absolute;
+  inset: 16px 16px auto auto;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+form h1 {
+  font-family: var(--font-logo);
+  font-size: 0.8rem;
+}
+
+form h2 {
+  font-family: var(--font-primary);
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form label {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+form input {
+  padding: 8px;
+  border: 0.5px solid;
+  border-radius: 4px;
+  outline: none;
+}
+
+form input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.isValid {
+  margin-top: 4px;
+  color: rgb(3, 182, 3);
+}
+
+.noValid {
+  margin-top: 4px;
+  color: rgb(182, 39, 3);
+}
+
+form .boton-form {
+  width: 100%;
+  border: none;
+  padding: 16px;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  font-family: var(--font-primary);
+}
+
+form p {
+  font-size: 0.8rem;
+}
+
+form a {
+  color: var(--primary-color);
+}
