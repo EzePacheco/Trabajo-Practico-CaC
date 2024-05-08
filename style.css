@@ -25,6 +25,10 @@ html {
   background-color: var(--white);
   color: var(--black);
 }
+
+a {
+  color: var(--primary-color);
+}
 /* Reset - end */
 
 /* General - start */
@@ -36,6 +40,12 @@ html {
   grid-template-columns: repeat(12, 1fr);
   gap: 16px;
   padding: 0 72px;
+}
+
+.section {
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-bottom: 120px;
 }
 /* General - end */
 
@@ -288,7 +298,8 @@ nav #navbar-icon {
 /* Buscador Header Desktop - end */
 
 .boton-general {
-  display: block;
+  display: inline-block;
+  margin-top: 64px;
   padding: 16px;
   font-weight: 600;
   text-decoration: none;
@@ -307,12 +318,58 @@ nav .navbar-menu li:last-of-type a:hover,
 }
 /* Header Index - end */
 
+/* Weekly Event - start */
+
+.container-card {
+  display: flex;
+  padding: 32px 24px;
+
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: whitesmoke;
+  grid-column: 1 / -1;
+  gap: 24px;
+}
+
+.event-img {
+  width: 100%;
+}
+
+.event-text h2 {
+  font-size: 48px;
+}
+
+.event-text p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.event-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-info div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.event-info ion-icon {
+  font-size: 2rem;
+  color: #16b182;
+}
+
+/* Weekly Event - end */
+
 /* Listado de Cards */
 .container-cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column: 1 / -1;
   gap: 16px;
 }
 
@@ -394,6 +451,7 @@ nav .navbar-menu li:last-of-type a:hover,
 
 .tittle-section {
   grid-column: 1 / -1;
+  margin-bottom: 80px;
 }
 .tittle-section h2 {
   font-size: 1.5rem;
