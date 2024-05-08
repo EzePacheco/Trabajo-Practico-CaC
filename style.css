@@ -319,7 +319,6 @@ nav .navbar-menu li:last-of-type a:hover,
 /* Header Index - end */
 
 /* Weekly Event - start */
-
 .container-card {
   display: flex;
   padding: 32px 24px;
@@ -362,10 +361,9 @@ nav .navbar-menu li:last-of-type a:hover,
   font-size: 2rem;
   color: #16b182;
 }
-
 /* Weekly Event - end */
 
-/* Listado de Cards */
+/* Event cards List */
 .container-cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -494,4 +492,11 @@ nav .navbar-menu li:last-of-type a:hover,
   margin-left: 15px;
   padding: 5px;
   text-align: left;
+}
+
+.description-event p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
