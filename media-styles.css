@@ -64,6 +64,10 @@
   .event-info div {
     margin-bottom: 0.5rem;
   }
+
+  .form-create {
+    width: 100%;
+  }
 }
 
 @media (max-width: 780px) {
@@ -87,5 +91,12 @@
 
   .header-buscador {
     display: none;
+  }
+
+  .field-set {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
   }
 }
