@@ -47,6 +47,21 @@ a {
   grid-column: 1 / -1;
   margin-bottom: 120px;
 }
+
+.section-top {
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.message-error {
+  padding: 8px;
+  background-color: rgb(255, 93, 93);
+  border: 1px solid red;
+  text-align: center;
+  color: var(--white);
+}
 /* General - end */
 
 /* Navbar - start */
@@ -81,14 +96,16 @@ nav .navbar-menu {
   padding: 8px 0;
 }
 
-nav .navbar-menu li a {
+nav .navbar-menu li a,
+.filter-item {
   position: relative;
   text-decoration: none;
   color: var(--black);
   transition: background-color 0.5s ease;
 }
 
-nav .navbar-menu li a::before {
+nav .navbar-menu li a::before,
+.filter-item::before {
   content: "";
   position: absolute;
   left: 0;
@@ -99,7 +116,8 @@ nav .navbar-menu li a::before {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-nav .navbar-menu li a:hover::before {
+nav .navbar-menu li a:hover::before,
+.filter-item:hover::before {
   opacity: 1;
 }
 
@@ -288,6 +306,7 @@ nav #navbar-icon {
 
 .header-buscador button {
   padding: 16px;
+  margin-top: 0;
   display: flex;
   background-color: var(--primary-color);
   border: none;
@@ -304,9 +323,11 @@ nav #navbar-icon {
   font-weight: 600;
   text-decoration: none;
   text-align: center;
+  text-transform: uppercase;
   color: var(--white);
   background-color: var(--primary-color);
   border-radius: 8px;
+  border: none;
   grid-column: 6 / 8;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -322,7 +343,6 @@ nav .navbar-menu li:last-of-type a:hover,
 .container-card {
   display: flex;
   padding: 32px 24px;
-
   border-radius: 8px;
   background-color: #1e1e1e;
   color: whitesmoke;
@@ -334,8 +354,19 @@ nav .navbar-menu li:last-of-type a:hover,
   width: 100%;
 }
 
+.event-content,
+.event-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-text {
+  gap: 24px;
+}
+
 .event-text h2 {
-  font-size: 48px;
+  font-size: 32px;
 }
 
 .event-text p {
@@ -363,7 +394,7 @@ nav .navbar-menu li:last-of-type a:hover,
 }
 /* Weekly Event - end */
 
-/* Event cards List */
+/* Event cards List - start */
 .container-cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -449,14 +480,15 @@ nav .navbar-menu li:last-of-type a:hover,
 
 .tittle-section {
   grid-column: 1 / -1;
-  margin-bottom: 80px;
+  margin-bottom: 32px;
 }
-.tittle-section h2 {
-  font-size: 1.5rem;
+.tittle-section h2,
+.tittle-section h1 {
+  font-size: 2rem;
 }
 
 .tittle-section p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .container-description {
@@ -500,3 +532,69 @@ nav .navbar-menu li:last-of-type a:hover,
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+/* Event cards List - end */
+
+/* Create Event Page - start */
+.form-create {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.field-set {
+  display: flex;
+  gap: 16px;
+}
+
+.field-set div:last-child {
+  flex-grow: 1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field input {
+  padding: 8px;
+}
+
+.field textarea {
+  resize: none;
+  width: 100%;
+  height: 96px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.field p {
+  font-size: 0.6rem;
+}
+
+.filter-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  text-transform: uppercase;
+  grid-column: 1 / -1;
+}
+
+.filter-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-create input[type="submit"] {
+  width: 50%;
+  margin: 0 auto;
+}
+/* Create Event Page - end */
