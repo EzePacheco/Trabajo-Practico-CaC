@@ -20,9 +20,15 @@ form {
   font-family: var(--font-text);
 }
 
-form ion-icon {
+.close-btn {
   position: absolute;
   inset: 16px 16px auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
 }

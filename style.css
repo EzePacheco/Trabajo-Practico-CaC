@@ -380,6 +380,7 @@ nav .navbar-menu li:last-of-type a:hover,
   width: 100%;
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .event-info div {

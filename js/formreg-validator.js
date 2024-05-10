@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const formulario = document.getElementById("formulario");
   const mensajeError = document.getElementById("mensajeError");
 
+  const closeBtn = document.querySelector("#close-btn");
+
+  const handleClose = () => {
+    window.location.href = "../index.html";
+  };
+
+  closeBtn.addEventListener("click", handleClose);
+
   formulario.addEventListener("submit", function (evento) {
     evento.preventDefault(); // Previene el envío del formulario para poder validarlo con Javascript
 

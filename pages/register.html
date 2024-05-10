@@ -29,7 +29,9 @@
   <body>
     <main>
       <form action="" id="formulario">
-        <a href="../index.html"> <ion-icon name="close-outline"></ion-icon></a>
+        <button type="button" id="close-btn" class="close-btn">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
         <h1>MUNDOdeEVENTOS</h1>
         <h2>Registra tu Cuenta</h2>
         <div>
@@ -45,15 +47,16 @@
           <input id="password" name="password" type="password" />
         </div>
         <div>
-        <input type="checkbox" id="terminos" name="terminos">
-        <label for="terminos" class="labelCheck">Acepto los términos y condiciones</label>
+          <input type="checkbox" id="terminos" name="terminos" />
+          <label for="terminos" class="labelCheck"
+            >Acepto los términos y condiciones</label
+          >
         </div>
         <input type="submit" value="Crear Cuenta" class="boton-form" />
         <p id="mensajeError"></p>
         <p>Ya tienes una cuenta? <a href="./login.html">Inicia Sesión</a></p>
       </form>
     </main>
-
 
     <script src="/js/formreg-validator.js"></script>
   </body>
