@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function validarPass(password) {
     const valPass =
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     return valPass.test(password);
   }
 });
