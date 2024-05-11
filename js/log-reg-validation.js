@@ -3,6 +3,12 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const message = document.createElement("p");
 const contenedoresInput = document.querySelectorAll("div");
+const closeBtn = document.querySelector("#close-btn");
+
+const handleClose = () => {
+  window.location.href = "../index.html";
+  // window.history.go(-1);
+};
 
 const handleEmail = (e) => {
   emailRegex =
@@ -48,3 +54,4 @@ const handlePassword = (e) => {
 
 email.addEventListener("input", handleEmail);
 password.addEventListener("input", handlePassword);
+closeBtn.addEventListener("click", handleClose);

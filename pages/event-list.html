@@ -58,60 +58,24 @@
           <h1 class="h2">Crear Evento</h1>
           <p class="p">Puedes crear tu propio evento y publicarlo</p>
         </div>
-        <form id="form-create" class="form-create">
-          <h2 class="form-title">
-            Completa el formulario para añadir tu evento
-          </h2>
-          <div class="field">
-            <label for="event-title">Título del evento</label>
-            <input id="event-title" type="text" name="title" />
-          </div>
-          <div class="field-set">
-            <div class="field">
-              <label for="event-date">Fecha</label
-              ><input id="event-date" type="date" name="date" />
-            </div>
-            <div class="field">
-              <label for="event-time">Hora</label
-              ><input id="event-time" type="time" name="time" />
-            </div>
-            <div class="field">
-              <label for="event-place">Lugar</label
-              ><input id="event-place" type="text" name="place" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="event-direction">Dirección</label>
-            <input id="event-direction" type="text" name="direction" />
-          </div>
-          <div class="field">
-            <label for="event-city">Ciudad</label>
-            <input id="event-city" type="text" name="city" />
-          </div>
-          <div class="field">
-            <label for="event-description">Descripción del evento</label>
-            <textarea name="description" id="event-description"></textarea>
-          </div>
-          <div class="field">
-            <label for="event-image"
-              >Añade la URL de la imagen representativa</label
-            >
-            <input id="event-image" type="text" name="image" />
-            <p>
-              UTILIZA UNA URL DE LA IMAGEN QUE QUIERES AGREGAR, PUEDES OBTENERLA
-              DESDE EL NAVEGADOR O DESDE UN HOSTING DE IMAGENES.
-            </p>
-          </div>
-          <input
-            type="submit"
-            value="Crear"
-            class="boton-general"
-            style="margin-top: 32px"
-          />
-        </form>
+        <div>
+          <ul class="filter-list">
+            <li class="filter-item">todos</li>
+            <li class="filter-item">arte y entretenimiento</li>
+            <li class="filter-item">deporte</li>
+            <li class="filter-item">música</li>
+            <li class="filter-item">Educativos</li>
+            <li class="filter-item">Gastronomía</li>
+            <li class="filter-item">Gaming</li>
+            <li class="filter-item">Corporativos</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section">
+        <div id="event-list"></div>
       </section>
     </main>
     <script type="module" src="../js/menu-mobile.js"></script>
-    <script type="module" src="../js/create-event.js"></script>
+    <script src="../js/event-list.js"></script>
   </body>
 </html>
