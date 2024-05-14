@@ -394,18 +394,29 @@ nav .navbar-menu li:last-of-type a:hover,
   color: #16b182;
 }
 
+.event-info span {
+  font-weight: 600;
+}
+
 .event-price{
   font-size: 25px; 
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .event-price ion-icon{
   font-size: 50px;
 }
 
-.my-events.img{
-  width:1296px;
+.my-eventsimg{
+  height: 55vh;
 }
+
+.summaryEvent{
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
 /* Weekly Event - end */
 
 /* Event cards List - start */
