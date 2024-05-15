@@ -92,3 +92,10 @@ form p {
 form a {
   color: var(--primary-color);
 }
+
+/* Register Page */
+.container-terms{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

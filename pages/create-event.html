@@ -29,29 +29,29 @@
     ></script>
     <title>Mundo de Eventos</title>
   </head>
-  <header class="container">
-    <!-- Navigation Desktop -->
-    <nav>
-      <p class="navbar-logo">MUNDOdeEVENTOS</p>
-      <!-- Navigation Mobile -->
-      <div id="navbar-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="navbar-menu">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="./event-list.html">Eventos</a></li>
-        <li><a href="./create-event.html">Crear Evento</a></li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="./login.html">Iniciar Sesión</a></li>
-        <li><a href="./register.html">Crear Cuenta</a></li>
-      </ul>
-    </nav>
-  </header>
   <body>
+    <header class="container">
+      <!-- Navigation Desktop -->
+      <nav>
+        <p class="navbar-logo">MUNDOdeEVENTOS</p>
+        <!-- Navigation Mobile -->
+        <div id="navbar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./event-list.html">Eventos</a></li>
+          <li><a href="./create-event.html">Crear Evento</a></li>
+          <li><a href="./favorites.html">Favoritos</a></li>
+          <li><a href="./contact.html">Contacto</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./register.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </header>
     <main class="container">
       <section class="section-top">
         <div class="tittle-section">
@@ -68,16 +68,13 @@
           </div>
           <div class="field-set">
             <div class="field">
-              <label for="event-date">Fecha</label
-              ><input id="event-date" type="date" name="date" />
+              <label for="event-date">Fecha</label><input id="event-date" type="date" name="date" />
             </div>
             <div class="field">
-              <label for="event-time">Hora</label
-              ><input id="event-time" type="time" name="time" />
+              <label for="event-time">Hora</label><input id="event-time" type="time" name="time" />
             </div>
             <div class="field">
-              <label for="event-place">Lugar</label
-              ><input id="event-place" type="text" name="place" />
+              <label for="event-place">Lugar</label><input id="event-place" type="text" name="place" />
             </div>
           </div>
           <div class="field">
@@ -93,25 +90,19 @@
             <textarea name="description" id="event-description"></textarea>
           </div>
           <div class="field">
-            <label for="event-image"
-              >Añade la URL de la imagen representativa</label
-            >
+            <label for="event-image">Añade la URL de la imagen representativa</label>
             <input id="event-image" type="text" name="image" />
             <p>
               UTILIZA UNA URL DE LA IMAGEN QUE QUIERES AGREGAR, PUEDES OBTENERLA
               DESDE EL NAVEGADOR O DESDE UN HOSTING DE IMAGENES.
             </p>
           </div>
-          <input
-            type="submit"
-            value="Crear"
-            class="boton-general"
-            style="margin-top: 32px"
-          />
+          <input type="submit" value="Crear" class="boton-general" style="margin-top: 32px" />
         </form>
       </section>
     </main>
     <script type="module" src="../js/menu-mobile.js"></script>
     <script type="module" src="../js/create-event.js"></script>
   </body>
+  <footer></footer>
 </html>

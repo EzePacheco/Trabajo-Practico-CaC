@@ -21,37 +21,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Validación de los campos
     if (nombre.trim() === "") {
-      mensajeError.innerText = "El campo nombre no puede estar vacío.";
+      mensajeError.innerHTML = "El campo nombre no puede estar vacío.";
+      mensajeError.classList.add("noValid");
       return;
     }
 
     if (email.trim() === "") {
-      mensajeError.innerText = "El campo email no puede estar vacío.";
+      mensajeError.innerHTML = "El campo email no puede estar vacío.";
+      mensajeError.classList.add("noValid");
       return;
     }
 
     if (!validarEmail(email)) {
-      mensajeError.innerText = "El formato del email no es válido.";
+      mensajeError.innerHTML = "El formato del email no es válido.";
+      mensajeError.classList.add("noValid");
       return;
     }
 
     if (password === "") {
-      mensajeError.innerText = "El campo password no puede estar vacío.";
+      mensajeError.innerHTML = "El campo password no puede estar vacío.";
+      mensajeError.classList.add("noValid");
       return;
     }
 
     if (!validarPass(password)) {
-      mensajeError.innerText = "La contraseña ingresada no es válida.";
+      mensajeError.innerHTML = "La contraseña ingresada no es válida.";
+      mensajeError.classList.add("noValid");
       return;
     }
 
     if (!terminos) {
-      mensajeError.innerText = "Debes aceptar los términos y condiciones.";
+      mensajeError.innerHTML = "Debes aceptar los términos y condiciones.";
+      mensajeError.classList.add("noValid");
       return;
     }
 
     // Si todo está correcto, se puede proceder a enviar el formulario.
-    mensajeError.innerText = "";
+    mensajeError.innerHTML = "";
     // alert('Formulario enviado con éxito!');
     formulario.submit();
   });
