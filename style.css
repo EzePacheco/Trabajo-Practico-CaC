@@ -46,6 +46,9 @@ a {
   width: 100%;
   grid-column: 1 / -1;
   margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-top {
@@ -314,8 +317,8 @@ nav #navbar-icon {
   color: var(--white);
   font-size: 1.5rem;
 }
-/* Buscador Header Desktop - end */
 
+/* Buscador Header Desktop - end */
 .boton-general {
   display: inline-block;
   margin-top: 64px;
@@ -340,7 +343,7 @@ nav .navbar-menu li:last-of-type a:hover,
 /* Header Index - end */
 
 /* Weekly Event - start */
-.container-card {
+.container-weekly-event {
   display: flex;
   padding: 32px 24px;
   border-radius: 8px;
@@ -398,20 +401,20 @@ nav .navbar-menu li:last-of-type a:hover,
   font-weight: 600;
 }
 
-.event-price{
-  font-size: 25px; 
+.event-price {
+  font-size: 25px;
   margin-top: 40px;
 }
 
-.event-price ion-icon{
+.event-price ion-icon {
   font-size: 50px;
 }
 
-.my-eventsimg{
+.my-eventsimg {
   height: 55vh;
 }
 
-.summaryEvent{
+.summaryEvent {
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 40px;
@@ -423,7 +426,7 @@ nav .navbar-menu li:last-of-type a:hover,
 .container-cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 1fr); */
   gap: 16px;
 }
 
