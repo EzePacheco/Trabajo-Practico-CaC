@@ -399,7 +399,8 @@ nav .navbar-menu li:last-of-type a:hover,
 .container-cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 1fr); */
+  place-items: center;
   gap: 16px;
 }
 
@@ -577,6 +578,13 @@ nav .navbar-menu li:last-of-type a:hover,
 
 .field p {
   font-size: 0.6rem;
+}
+
+.select-categories {
+  display: none;
+  width: 50%;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .filter-list {
