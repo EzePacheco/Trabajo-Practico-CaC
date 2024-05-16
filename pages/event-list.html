@@ -55,10 +55,23 @@
     <main class="container">
       <section class="section-top">
         <div class="tittle-section">
-          <h1 class="h2">Crear Evento</h1>
-          <p class="p">Puedes crear tu propio evento y publicarlo</p>
+          <h1 class="h2">Eventos</h1>
+          <p class="p">Encuentra aquí todos los eventos agregados</p>
         </div>
         <div>
+          <select name="categories" id="categories" class="select-categories">
+            <option value="">Selecciona una Categoría</option>
+            <option value="todos">Todos</option>
+            <option value="arte y entretenimiento">
+              Arte y Entretenimiento
+            </option>
+            <option value="deporte">Deporte</option>
+            <option value="música">Música</option>
+            <option value="educativos">Educativos</option>
+            <option value="gastronomía">Gastronomía</option>
+            <option value="gaming">Gaming</option>
+            <option value="corporativos">Corporativos</option>
+          </select>
           <ul class="filter-list">
             <li class="filter-item">todos</li>
             <li class="filter-item">arte y entretenimiento</li>
@@ -72,7 +85,7 @@
         </div>
       </section>
       <section class="section">
-        <div id="event-list"></div>
+        <div id="event-list" class="container-cards"></div>
       </section>
     </main>
     <script type="module" src="../js/menu-mobile.js"></script>
