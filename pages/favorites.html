@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../media-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Mundo de Eventos</title>
+</head>
+<body>
+    <header class="container">
+        <!-- Navigation Desktop -->
+        <nav>
+            <p class="navbar-logo">MUNDOdeEVENTOS</p>
+            <!-- Navigation Mobile -->
+            <div id="navbar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./event-list.html">Eventos</a></li>
+                <li><a href="./create-event.html">Crear Evento</a></li>
+                <li><a href="./favorites.html">Favoritos</a></li>
+                <li><a href="./contact.html">Contacto</a></li>
+                <li><a href="./login.html">Iniciar Sesión</a></li>
+                <li><a href="./register.html">Crear Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <!-- Events List -->
+        <section class="section-top">
+            <div class="tittle-section">
+              <h2 class="h2">Favoritos</h2>
+              <p class="p">Encuentra aquí tus eventos favoritos</p>
+            </div>
+            <div class="container-cards">
+              <article class="card event-card1">
+                <ion-icon name="heart"></ion-icon>
+                <img src="https://picsum.photos/200" alt="Imagen random" />
+                <div class="container-description">
+                  <div class="calendar">
+                    <h4 class="month">MES</h4>
+                    <p class="day">10</p>
+                  </div>
+                  <div class="description-event">
+                    <h4 class="tittle-event">Titulo para este evento</h4>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Aperiam neque nisi reprehenderit soluta nesciunt est
+                      perspiciatis obcaecati illum sunt laudantium repellat, quis
+                      porro ratione adipisci hic repellendus in velit aspernatur?
+                      Ratione harum nihil ut, officia quod sunt ex veniam quia totam
+                      qui minima tempora libero saepe quaerat ipsa necessitatibus
+                      iure accusantium voluptatibus et tempore placeat vitae
+                      molestiae. Accusantium, accusamus porro. Similique assumenda
+                      blanditiis qui nulla fugiat maiores ullam dicta debitis. Vero
+                      maiores similique consequuntur illo dicta quos eius eum quo
+                      quasi? Blanditiis officiis, autem esse asperiores pariatur
+                      consectetur voluptatem veritatis.
+                    </p>
+                    <a href=""><li>Leer más</li></a>
+                  </div>
+                </div>
+              </article>
+              <article class="card event-card2">
+                <ion-icon name="heart"></ion-icon>
+                <img src="https://picsum.photos/200" alt="Imagen random" />
+                <div class="container-description">
+                  <div class="calendar">
+                    <h4 class="month">MES</h4>
+                    <p class="day">10</p>
+                  </div>
+                  <div class="description-event">
+                    <h4 class="tittle-event">Titulo para este evento</h4>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                      cupiditate!
+                    </p>
+                    <a href=""><li>Leer más</li></a>
+                  </div>
+                </div>
+              </article>
+              <article class="card event-card3">
+                <ion-icon name="heart"></ion-icon>
+                <img src="https://picsum.photos/200" alt="Imagen random" />
+                <div class="container-description">
+                  <div class="calendar">
+                    <h4 class="month">MES</h4>
+                    <p class="day">10</p>
+                  </div>
+                  <div class="description-event">
+                    <h4 class="tittle-event">Titulo para este evento</h4>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
+                      cupiditate!
+                    </p>
+                    <a href=""><li>Leer más</li></a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+    </main>
+    <script type="module" src="../js/menu-mobile.js"></script>
+    <script type="module" src="../js/create-event.js"></script>
+</body>
+<footer></footer>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../media-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Mundo de Eventos</title>
+  </head>
+  <body>
+    <header class="container">
+      <!-- Navigation Desktop -->
+      <nav>
+        <p class="navbar-logo">MUNDOdeEVENTOS</p>
+        <!-- Navigation Mobile -->
+        <div id="navbar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./event-list.html">Eventos</a></li>
+          <li><a href="./create-event.html">Crear Evento</a></li>
+          <li><a href="./favorites.html">Favoritos</a></li>
+          <li><a href="./contact.html">Contacto</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./register.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="section-top">
+        <div class="tittle-section">
+          <h1 class="h2">Crear Evento</h1>
+          <p class="p">Puedes crear tu propio evento y publicarlo</p>
+        </div>
+        <form id="form-create" class="form-create">
+          <h2 class="form-title">
+            Completa el formulario para añadir tu evento
+          </h2>
+          <div class="field">
+            <label for="event-title">Título del evento</label>
+            <input id="event-title" type="text" name="title" />
+          </div>
+          <div class="field-set">
+            <div class="field">
+              <label for="event-date">Fecha</label><input id="event-date" type="date" name="date" />
+            </div>
+            <div class="field">
+              <label for="event-time">Hora</label><input id="event-time" type="time" name="time" />
+            </div>
+            <div class="field">
+              <label for="event-place">Lugar</label><input id="event-place" type="text" name="place" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="event-direction">Dirección</label>
+            <input id="event-direction" type="text" name="direction" />
+          </div>
+          <div class="field">
+            <label for="event-city">Ciudad</label>
+            <input id="event-city" type="text" name="city" />
+          </div>
+          <div class="field">
+            <label for="event-description">Descripción del evento</label>
+            <textarea name="description" id="event-description"></textarea>
+          </div>
+          <div class="field">
+            <label for="event-image">Añade la URL de la imagen representativa</label>
+            <input id="event-image" type="text" name="image" />
+            <p>
+              UTILIZA UNA URL DE LA IMAGEN QUE QUIERES AGREGAR, PUEDES OBTENERLA
+              DESDE EL NAVEGADOR O DESDE UN HOSTING DE IMAGENES.
+            </p>
+          </div>
+          <input type="submit" value="Crear" class="boton-general" style="margin-top: 32px" />
+        </form>
+      </section>
+    </main>
+    <script type="module" src="../js/menu-mobile.js"></script>
+    <script type="module" src="../js/create-event.js"></script>
+  </body>
+  <footer></footer>
+</html>
