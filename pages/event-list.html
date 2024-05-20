@@ -29,34 +29,35 @@
     ></script>
     <title>Mundo de Eventos</title>
   </head>
-  <header class="container">
-    <!-- Navigation Desktop -->
-    <nav>
-      <p class="navbar-logo">MUNDOdeEVENTOS</p>
-      <!-- Navigation Mobile -->
-      <div id="navbar-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="navbar-menu">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="./event-list.html">Eventos</a></li>
-        <li><a href="./create-event.html">Crear Evento</a></li>
-        <li><a href="./favorites.html">Favoritos</a></li>
-        <li><a href="./contact.html">Contacto</a></li>
-        <li><a href="./login.html">Iniciar Sesión</a></li>
-        <li><a href="./register.html">Crear Cuenta</a></li>
-      </ul>
-    </nav>
-  </header>
   <body>
+    <header class="container">
+      <!-- Navigation Desktop -->
+      <nav>
+        <p class="navbar-logo">MUNDOdeEVENTOS</p>
+        <!-- Navigation Mobile -->
+        <div id="navbar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./event-list.html">Eventos</a></li>
+          <li><a href="./create-event.html">Crear Evento</a></li>
+          <li><a href="./favorites.html">Favoritos</a></li>
+          <li><a href="./contact.html">Contacto</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./register.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main class="container">
       <section class="section-top">
-        <div class="tittle-section">
-          <h1 class="h2">Eventos</h1>
-          <p class="p">Encuentra aquí todos los eventos agregados</p>
+        <div class="section-title">
+          <h1>Eventos</h1>
+          <p>Encuentra aquí todos los eventos agregados</p>
         </div>
         <div>
           <select name="categories" id="categories" class="select-categories">
@@ -88,6 +89,60 @@
         <div id="event-list" class="container-cards"></div>
       </section>
     </main>
+    <footer class="container footer">
+      <h3 class="navbar-logo navbar-logo--footer">MUNDOdeEVENTOS</h3>
+      <ul class="navbar-footer">
+        <li>
+          <a href="./index.html">INICIO</a>
+        </li>
+        <li>
+          <a href="./pages/event-list.html">EVENTOS</a>
+        </li>
+        <li>
+          <a href="./pages/register.html">CREAR CUENTA</a>
+        </li>
+        <li>
+          <a href="./pages/contact.html">CONTACTO</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-footer navbar-footer--dev">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/EzePacheco/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Ezequiel Pacheco</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/emanuel-valente/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emanuel Valente</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/german-caballero-89371614a/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> German Caballero</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/fern%C3%A1ndez-emiliano-796403289/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emiliano Fernandez</a
+          >
+        </li>
+      </ul>
+
+      <h5>MUNDOdeEVENTOS - PROYECTO GRUPAL FULLSTACK CODO A CODO 4.0</h5>
+    </footer>
     <script type="module" src="../js/menu-mobile.js"></script>
     <script src="../js/event-list.js"></script>
   </body>

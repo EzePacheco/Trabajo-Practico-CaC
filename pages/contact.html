@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
@@ -9,68 +8,139 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet" />
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <title>Mundo de Eventos</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="container">
-        <!-- Navigation Desktop -->
-        <nav>
-            <p class="navbar-logo">MUNDOdeEVENTOS</p>
-            <!-- Navigation Mobile -->
-            <div id="navbar-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./event-list.html">Eventos</a></li>
-                <li><a href="./create-event.html">Crear Evento</a></li>
-                <li><a href="./favorites.html">Favoritos</a></li>
-                <li><a href="./contact.html">Contacto</a></li>
-                <li><a href="./login.html">Iniciar Sesión</a></li>
-                <li><a href="./register.html">Crear Cuenta</a></li>
-            </ul>
-        </nav>
+      <!-- Navigation Desktop -->
+      <nav>
+        <p class="navbar-logo">MUNDOdeEVENTOS</p>
+        <!-- Navigation Mobile -->
+        <div id="navbar-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./event-list.html">Eventos</a></li>
+          <li><a href="./create-event.html">Crear Evento</a></li>
+          <li><a href="./favorites.html">Favoritos</a></li>
+          <li><a href="./contact.html">Contacto</a></li>
+          <li><a href="./login.html">Iniciar Sesión</a></li>
+          <li><a href="./register.html">Crear Cuenta</a></li>
+        </ul>
+      </nav>
     </header>
     <main class="container">
-        <section class="section-top">
-            <div class="tittle-section">
-                <h1 class="h2">Contacto</h1>
-                <p class="p">Si tienes algun inconveniente puedes contactarnos a través de este formulario</p>
-            </div>
-            <form id="form-create" class="form-create">
-                <h2 class="form-title">
-                    Completa el formulario para añadir tu evento
-                </h2>
-                <div class="field">
-                    <label for="name">Nombre y Apellido</label>
-                    <input id="name" name="name" type="text" />
-                </div>
-                <div class="field">
-                    <label for="email">Correo Electrónico</label>
-                    <input id="email" name="email" type="email" />
-                </div>
-                <div class="field">
-                    <label for="message">Mensaje</label>
-                    <textarea name="message" id="message"></textarea>
-                </div>
-                <input type="submit" value="ENVIAR" class="boton-general" style="margin-top: 32px" />
-            </form>
-        </section>
+      <section class="section-top">
+        <div class="section-title">
+          <h1>Contacto</h1>
+          <p>
+            Si tienes algun inconveniente puedes contactarnos a través de este
+            formulario
+          </p>
+        </div>
+        <form id="form-create" class="form-create">
+          <h2 class="form-title">
+            Completa el formulario para añadir tu evento
+          </h2>
+          <div class="field">
+            <label for="name">Nombre y Apellido</label>
+            <input id="name" name="name" type="text" />
+          </div>
+          <div class="field">
+            <label for="email">Correo Electrónico</label>
+            <input id="email" name="email" type="email" />
+          </div>
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message"></textarea>
+          </div>
+          <input
+            type="submit"
+            value="ENVIAR"
+            class="boton-general"
+            style="margin-top: 32px"
+          />
+        </form>
+      </section>
     </main>
+    <footer class="container footer">
+      <h3 class="navbar-logo navbar-logo--footer">MUNDOdeEVENTOS</h3>
+      <ul class="navbar-footer">
+        <li>
+          <a href="./index.html">INICIO</a>
+        </li>
+        <li>
+          <a href="./pages/event-list.html">EVENTOS</a>
+        </li>
+        <li>
+          <a href="./pages/register.html">CREAR CUENTA</a>
+        </li>
+        <li>
+          <a href="./pages/contact.html">CONTACTO</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-footer navbar-footer--dev">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/EzePacheco/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Ezequiel Pacheco</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/emanuel-valente/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emanuel Valente</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/german-caballero-89371614a/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> German Caballero</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/fern%C3%A1ndez-emiliano-796403289/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emiliano Fernandez</a
+          >
+        </li>
+      </ul>
+
+      <h5>MUNDOdeEVENTOS - PROYECTO GRUPAL FULLSTACK CODO A CODO 4.0</h5>
+    </footer>
     <script type="module" src="../js/menu-mobile.js"></script>
     <script type="module" src="../js/create-event.js"></script>
-</body>
-<footer></footer>
-
+  </body>
 </html>

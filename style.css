@@ -10,6 +10,8 @@
   --font-primary: "Poppins", sans-serif;
   --font-text: "Roboto", sans-serif;
   --font-logo: "Caveat", cursive;
+  --font-size-text: 14px;
+  --font-size-title: 24px;
 }
 
 /* Reset - start */
@@ -18,7 +20,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Reset - end */
 
+/* General styles - start */
 body,
 html {
   font-family: var(--font-primary);
@@ -27,11 +31,14 @@ html {
 }
 
 a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:hover {
   color: var(--primary-color);
 }
-/* Reset - end */
 
-/* General - start */
 .container {
   width: 100%;
   max-width: 1440px;
@@ -58,6 +65,33 @@ a {
   margin-bottom: 120px;
 }
 
+.section-title {
+  margin-bottom: 32px;
+  align-self: flex-start;
+}
+
+.section-title h2,
+.section-title h1 {
+  font-size: calc(var(--font-size-title) + 1vw);
+}
+
+.boton-general {
+  display: inline-block;
+  margin-top: 64px;
+  padding: 16px 32px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  border: none;
+  grid-column: 6 / 8;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
 .message-error {
   padding: 8px;
   background-color: rgb(255, 93, 93);
@@ -65,7 +99,7 @@ a {
   text-align: center;
   color: var(--white);
 }
-/* General - end */
+/* General styles - end */
 
 /* Navbar - start */
 nav {
@@ -80,12 +114,18 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: var(--white);
+  box-shadow: 4px 0 16px var(--shadow);
 }
 
-nav .navbar-logo {
+.navbar-logo {
   font-family: var(--font-logo);
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
+}
+
+.navbar-logo--footer {
+  font-size: 1.5rem;
+  color: var(--white);
 }
 
 nav .navbar-menu {
@@ -137,12 +177,18 @@ nav .navbar-menu li:last-of-type a::before {
   content: none;
 }
 
+nav .navbar-menu li:last-of-type a:hover,
+.boton-general:hover {
+  background-color: var(--primary-color-hover);
+  color: var(--white);
+}
+
 nav #navbar-icon {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   position: relative;
-  margin-top: 16px;
+  margin-top: 8px;
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
@@ -167,15 +213,15 @@ nav #navbar-icon {
 
 #navbar-icon span:nth-child(2),
 #navbar-icon span:nth-child(3) {
-  top: 12px;
+  top: 8px;
 }
 
 #navbar-icon span:nth-child(4) {
-  top: 24px;
+  top: 16px;
 }
 
 #navbar-icon.open span:nth-child(1) {
-  top: 12px;
+  top: 8px;
   width: 0%;
   left: 50%;
 }
@@ -217,7 +263,7 @@ nav #navbar-icon {
 }
 
 .header-text h1 {
-  font-size: 56px;
+  font-size: calc(48px + 1vw);
   color: var(--white);
   text-align: center;
 }
@@ -317,29 +363,7 @@ nav #navbar-icon {
   color: var(--white);
   font-size: 1.5rem;
 }
-
 /* Buscador Header Desktop - end */
-.boton-general {
-  display: inline-block;
-  margin-top: 64px;
-  padding: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--white);
-  background-color: var(--primary-color);
-  border-radius: 8px;
-  border: none;
-  grid-column: 6 / 8;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-
-nav .navbar-menu li:last-of-type a:hover,
-.boton-general:hover {
-  background-color: var(--primary-color-hover);
-}
 /* Header Index - end */
 
 /* Weekly Event - start */
@@ -357,6 +381,13 @@ nav .navbar-menu li:last-of-type a:hover,
   width: 100%;
 }
 
+.event-img--detail {
+  width: 100%;
+  height: 50vh;
+  margin-bottom: 24px;
+  object-fit: cover;
+}
+
 .event-content,
 .event-text {
   display: flex;
@@ -369,7 +400,7 @@ nav .navbar-menu li:last-of-type a:hover,
 }
 
 .event-text h2 {
-  font-size: 32px;
+  font-size: calc(1.5rem + 1vw);
 }
 
 .event-text p {
@@ -386,8 +417,10 @@ nav .navbar-menu li:last-of-type a:hover,
   font-size: 14px;
 }
 
-.event-info div {
+.event-info div,
+.event-price {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 16px;
 }
@@ -402,24 +435,20 @@ nav .navbar-menu li:last-of-type a:hover,
 }
 
 .event-price {
-  font-size: 25px;
-  margin-top: 40px;
+  font-size: 24px;
+  margin-top: 24px;
 }
 
 .event-price ion-icon {
-  font-size: 50px;
+  font-size: 2.5rem;
+  color: #16b182;
 }
 
-.my-eventsimg {
-  height: 55vh;
-}
-
-.summaryEvent {
+.event-description {
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 40px;
 }
-
 /* Weekly Event - end */
 
 /* Event cards List - start */
@@ -563,6 +592,53 @@ nav .navbar-menu li:last-of-type a:hover,
 }
 /* Event cards List - end */
 
+/* Footer - start */
+footer.footer {
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  color: var(--white);
+}
+
+.footer .navbar-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+}
+
+.navbar-footer a {
+  font-size: 14px;
+}
+
+.footer .navbar-footer--dev {
+  font-size: 10px;
+  flex-wrap: wrap;
+}
+
+.navbar-footer--dev .footer-devlink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer h5 {
+  text-align: center;
+  font-size: calc(var(12px + 1vw));
+  font-weight: 500;
+}
+/* Footer - end */
+
+/* ----- REST PAGES ----- */
+
 /* Create Event Page - start */
 .form-create {
   width: 50%;
@@ -611,7 +687,23 @@ nav .navbar-menu li:last-of-type a:hover,
   display: none;
   width: 50%;
   padding: 8px;
-  border-radius: 4px;
+  border: none;
+  border-bottom: 1px solid var(--black);
+  outline: none;
+}
+
+.select-categories--bar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid var(--white);
+  outline: none;
+  background-color: transparent;
+  color: var(--white);
+}
+
+.select-categories--bar option {
+  color: var(--black);
 }
 
 .filter-list {
@@ -634,3 +726,7 @@ nav .navbar-menu li:last-of-type a:hover,
   margin: 0 auto;
 }
 /* Create Event Page - end */
+
+/* Event Page - start */
+
+/* Event Page - end */

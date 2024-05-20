@@ -54,9 +54,9 @@
     </header>
     <main class="container">
       <section class="section-top">
-        <div class="tittle-section">
-          <h1 class="h2">Crear Evento</h1>
-          <p class="p">Puedes crear tu propio evento y publicarlo</p>
+        <div class="section-title">
+          <h1>Crear Evento</h1>
+          <p>Puedes crear tu propio evento y publicarlo</p>
         </div>
         <form id="form-create" class="form-create">
           <h2 class="form-title">
@@ -68,13 +68,16 @@
           </div>
           <div class="field-set">
             <div class="field">
-              <label for="event-date">Fecha</label><input id="event-date" type="date" name="date" />
+              <label for="event-date">Fecha</label
+              ><input id="event-date" type="date" name="date" />
             </div>
             <div class="field">
-              <label for="event-time">Hora</label><input id="event-time" type="time" name="time" />
+              <label for="event-time">Hora</label
+              ><input id="event-time" type="time" name="time" />
             </div>
             <div class="field">
-              <label for="event-place">Lugar</label><input id="event-place" type="text" name="place" />
+              <label for="event-place">Lugar</label
+              ><input id="event-place" type="text" name="place" />
             </div>
           </div>
           <div class="field">
@@ -90,19 +93,79 @@
             <textarea name="description" id="event-description"></textarea>
           </div>
           <div class="field">
-            <label for="event-image">Añade la URL de la imagen representativa</label>
+            <label for="event-image"
+              >Añade la URL de la imagen representativa</label
+            >
             <input id="event-image" type="text" name="image" />
             <p>
               UTILIZA UNA URL DE LA IMAGEN QUE QUIERES AGREGAR, PUEDES OBTENERLA
               DESDE EL NAVEGADOR O DESDE UN HOSTING DE IMAGENES.
             </p>
           </div>
-          <input type="submit" value="Crear" class="boton-general" style="margin-top: 32px" />
+          <input
+            type="submit"
+            value="Crear"
+            class="boton-general"
+            style="margin-top: 32px"
+          />
         </form>
       </section>
     </main>
+    <footer class="container footer">
+      <h3 class="navbar-logo navbar-logo--footer">MUNDOdeEVENTOS</h3>
+      <ul class="navbar-footer">
+        <li>
+          <a href="./index.html">INICIO</a>
+        </li>
+        <li>
+          <a href="./pages/event-list.html">EVENTOS</a>
+        </li>
+        <li>
+          <a href="./pages/register.html">CREAR CUENTA</a>
+        </li>
+        <li>
+          <a href="./pages/contact.html">CONTACTO</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-footer navbar-footer--dev">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/EzePacheco/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Ezequiel Pacheco</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/emanuel-valente/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emanuel Valente</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/german-caballero-89371614a/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> German Caballero</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/fern%C3%A1ndez-emiliano-796403289/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emiliano Fernandez</a
+          >
+        </li>
+      </ul>
+
+      <h5>MUNDOdeEVENTOS - PROYECTO GRUPAL FULLSTACK CODO A CODO 4.0</h5>
+    </footer>
     <script type="module" src="../js/menu-mobile.js"></script>
     <script type="module" src="../js/create-event.js"></script>
   </body>
-  <footer></footer>
 </html>

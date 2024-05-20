@@ -61,30 +61,44 @@
       <!-- Event Search Home -->
       <form class="header-buscador">
         <div class="buscador-box">
-          <label for="by-categoria">Buscar por</label>
-          <!-- Select Build -->
-          <div class="select" role="select">
-            <span id="select-value">Categoria</span>
-            <ion-icon name="chevron-down-outline"></ion-icon>
-          </div>
-          <div class="options-list">
-            <div class="option">Arte</div>
-            <div class="option">Deporte</div>
-            <div class="option">Música</div>
-            <div class="option">Entretenimiento</div>
-            <div class="option">Entretenimiento</div>
-            <div class="option">Entretenimiento</div>
-          </div>
+          <label for="categories">Buscar por</label>
+          <select
+            name="categories"
+            id="categories"
+            class="select-categories--bar"
+          >
+            <option value="">Selecciona una Categoría</option>
+            <option value="todos">Todos</option>
+            <option value="arte y entretenimiento">
+              Arte y Entretenimiento
+            </option>
+            <option value="deporte">Deporte</option>
+            <option value="música">Música</option>
+            <option value="educativos">Educativos</option>
+            <option value="gastronomía">Gastronomía</option>
+            <option value="gaming">Gaming</option>
+            <option value="corporativos">Corporativos</option>
+          </select>
         </div>
         <!-- by City -->
         <div class="buscador-box">
           <label for="by-city">En</label>
-          <input type="text" id="by-city" name="by-city" />
+          <input
+            type="text"
+            id="by-city"
+            name="by-city"
+            placeholder="Ej. Buenos Aires"
+          />
         </div>
         <!-- by Date -->
         <div class="buscador-box">
           <label for="by-date">Fecha</label>
-          <input type="password" id="by-date" name="by-date" />
+          <input
+            type="password"
+            id="by-date"
+            name="by-date"
+            placeholder="Ej. 08/12/2003"
+          />
         </div>
         <button class="boton-general">
           <ion-icon name="search-outline"></ion-icon>
@@ -113,7 +127,7 @@
                 suscipit commodi? Animi, tempora dolorem at eos officiis
                 sapiente consequatur est?
               </p>
-              <a href="#">Ver más</a>
+              <a href="./pages/event.html">Ver más</a>
             </div>
             <div class="event-info">
               <div>
@@ -134,9 +148,9 @@
       </section>
       <!-- Events List -->
       <section class="section">
-        <div class="tittle-section">
-          <h2 class="h2">Últimos Eventos</h2>
-          <p class="p">Encuentra aquí los eventos destacados</p>
+        <div class="section-title">
+          <h2>Últimos Eventos</h2>
+          <p>Encuentra aquí los eventos destacados</p>
         </div>
         <div class="container-cards">
           <article class="card event-card1">
@@ -312,10 +326,63 @@
             </div>
           </article>
         </div>
-        <a href="#" class="boton-general">VER MAS</a>
+        <a href="./pages/event-list.html" class="boton-general">VER MAS</a>
       </section>
     </main>
-    <footer></footer>
+    <footer class="container footer">
+      <h3 class="navbar-logo navbar-logo--footer">MUNDOdeEVENTOS</h3>
+      <ul class="navbar-footer">
+        <li>
+          <a href="./index.html">INICIO</a>
+        </li>
+        <li>
+          <a href="./pages/event-list.html">EVENTOS</a>
+        </li>
+        <li>
+          <a href="./pages/register.html">CREAR CUENTA</a>
+        </li>
+        <li>
+          <a href="./pages/contact.html">CONTACTO</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-footer navbar-footer--dev">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/EzePacheco/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Ezequiel Pacheco</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/emanuel-valente/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emanuel Valente</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/german-caballero-89371614a/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> German Caballero</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/fern%C3%A1ndez-emiliano-796403289/"
+            class="footer-devlink"
+          >
+            <ion-icon name="logo-linkedin"></ion-icon> Emiliano Fernandez</a
+          >
+        </li>
+      </ul>
+
+      <h5>MUNDOdeEVENTOS - PROYECTO GRUPAL FULLSTACK CODO A CODO 4.0</h5>
+    </footer>
     <script type="module" src="./js/buscador-select.js"></script>
     <script type="module" src="./js/menu-mobile.js"></script>
   </body>

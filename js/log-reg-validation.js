@@ -40,7 +40,8 @@ const handlePassword = (e) => {
   passRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}[^'\s]/;
   if (!passRegex.test(e.target.value)) {
-    message.textContent = "password no válido";
+    message.textContent =
+      "password de 8 a 15 caracteres alfanuméricos, Mayús. Minús. y caracter especial";
     message.classList.remove("isValid");
     message.classList.add("noValid");
     contenedoresInput[1].appendChild(message);
