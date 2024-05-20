@@ -247,7 +247,7 @@ nav #navbar-icon {
   padding-top: 60px;
   margin-bottom: 120px;
   align-items: center;
-  background-image: url("./assets/img/header.png");
+  background-image: url("../assets/img/header.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
