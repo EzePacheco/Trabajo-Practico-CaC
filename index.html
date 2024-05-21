@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -53,7 +54,7 @@
       </nav>
 
       <div class="header-text">
-        <h1>Busca, Crea y Comparte tus Eventos</h1>
+        <h1 data-aos="zoom-in">Busca, Crea y Comparte tus Eventos</h1>
         <a class="boton-general" href="./pages/register.html"
           >Crea tu cuenta GRATIS!</a
         >
@@ -93,12 +94,7 @@
         <!-- by Date -->
         <div class="buscador-box">
           <label for="by-date">Fecha</label>
-          <input
-            type="date"
-            id="by-date"
-            name="by-date"
-            placeholder="Ej. 08/12/2003"
-          />
+          <input type="date" id="by-date" name="by-date" />
         </div>
         <button class="boton-general">
           <ion-icon name="search-outline"></ion-icon>
@@ -153,7 +149,7 @@
           <p>Encuentra aquí los eventos destacados</p>
         </div>
         <div class="container-cards">
-          <article class="card event-card1">
+          <article class="card event-card1" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -181,7 +177,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card2">
+          <article class="card event-card2" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -199,7 +195,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card3">
+          <article class="card event-card3" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -217,7 +213,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card4">
+          <article class="card event-card4" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -235,7 +231,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card5">
+          <article class="card event-card5" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -253,7 +249,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card6">
+          <article class="card event-card6" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -271,7 +267,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card7">
+          <article class="card event-card7" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -289,7 +285,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card8">
+          <article class="card event-card8" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -307,7 +303,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card9">
+          <article class="card event-card9" data-aos="fade-up">
             <ion-icon name="heart-outline"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -385,5 +381,9 @@
     </footer>
     <script type="module" src="./js/buscador-select.js"></script>
     <script type="module" src="./js/menu-mobile.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

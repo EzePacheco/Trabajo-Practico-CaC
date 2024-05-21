@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -60,7 +61,7 @@
           <p>Encuentra aquí tus eventos favoritos</p>
         </div>
         <div class="container-cards">
-          <article class="card event-card1">
+          <article class="card event-card1" data-aos="fade-up">
             <ion-icon name="heart"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -88,7 +89,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card2">
+          <article class="card event-card2" data-aos="fade-up">
             <ion-icon name="heart"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -106,7 +107,7 @@
               </div>
             </div>
           </article>
-          <article class="card event-card3">
+          <article class="card event-card3" data-aos="fade-up">
             <ion-icon name="heart"></ion-icon>
             <img src="https://picsum.photos/200" alt="Imagen random" />
             <div class="container-description">
@@ -183,5 +184,9 @@
     </footer>
     <script type="module" src="../js/menu-mobile.js"></script>
     <script type="module" src="../js/create-event.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

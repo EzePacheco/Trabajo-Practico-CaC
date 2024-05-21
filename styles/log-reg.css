@@ -18,6 +18,7 @@ form {
   gap: 16px;
   border-radius: 8px;
   font-family: var(--font-text);
+  font-size: 0.8rem;
 }
 
 .close-btn {
@@ -35,7 +36,7 @@ form {
 
 form h1 {
   font-family: var(--font-logo);
-  font-size: 1rem;
+  font-size: var(--font-size-text);
 }
 
 form h2 {
@@ -87,10 +88,6 @@ form .boton-form {
   background-color: var(--primary-color);
   border-radius: 4px;
   font-family: var(--font-primary);
-}
-
-form p {
-  font-size: 0.8rem;
 }
 
 form a {

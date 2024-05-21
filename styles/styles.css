@@ -79,6 +79,7 @@ a:hover {
   display: inline-block;
   margin-top: 64px;
   padding: 16px 32px;
+  font-size: var(--font-size-text);
   font-weight: 600;
   text-decoration: none;
   text-align: center;
@@ -97,6 +98,7 @@ a:hover {
   background-color: rgb(255, 93, 93);
   border: 1px solid red;
   text-align: center;
+  font-size: var(--font-size-text);
   color: var(--white);
 }
 /* General styles - end */
@@ -295,62 +297,18 @@ nav #navbar-icon {
   color: var(--primary-color);
 }
 
-.buscador-box input,
-.buscador-box .select {
+.buscador-box input {
   padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: var(--font);
-  font-size: 1rem;
+  font-size: var(--font-size-text);
   color: var(--white);
   border: none;
   border-bottom: solid 2px var(--white);
   outline: none;
   background-color: transparent;
-}
-
-.buscador-box .select {
-  cursor: pointer;
-}
-
-.options-list {
-  position: absolute;
-  z-index: 90;
-  top: 90px;
-  width: 90%;
-  height: 0;
-  max-height: 120px;
-  margin-top: 8px;
-  padding: 0 16px;
-  overflow-y: auto;
-  border-radius: 8px;
-  background-color: var(--white);
-  transition: 0.2s ease-in-out;
-}
-
-.options-list::-webkit-scrollbar {
-  width: 4px;
-  background-color: var(--white);
-}
-
-.options-list::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-}
-
-.options-list .option {
-  font-weight: 500;
-}
-
-.options-list .option:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
-  cursor: pointer;
-}
-
-.options-list.active {
-  height: 120px;
-  padding: 4px 16px;
 }
 
 .header-buscador button {
@@ -372,17 +330,17 @@ nav #navbar-icon {
   padding: 32px 24px;
   border-radius: 8px;
   background-color: #1e1e1e;
-  color: whitesmoke;
+  color: var(--white);
   grid-column: 1 / -1;
   gap: 24px;
 }
 
-.event-img {
+.event-img,
+.event-img--detail {
   width: 100%;
 }
 
 .event-img--detail {
-  width: 100%;
   height: 50vh;
   margin-bottom: 24px;
   object-fit: cover;
@@ -408,13 +366,14 @@ nav #navbar-icon {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+  font-size: var(--font-size-text);
 }
 
 .event-info {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: var(--font-size-text);
 }
 
 .event-info div,
@@ -426,7 +385,7 @@ nav #navbar-icon {
 }
 
 .event-info ion-icon {
-  font-size: 2rem;
+  font-size: var(--font-size-title);
   color: #16b182;
 }
 
@@ -435,7 +394,7 @@ nav #navbar-icon {
 }
 
 .event-price {
-  font-size: 24px;
+  font-size: var(--font-size-title);
   margin-top: 24px;
 }
 
@@ -445,7 +404,7 @@ nav #navbar-icon {
 }
 
 .event-description {
-  font-size: 14px;
+  font-size: var(--font-size-text);
   font-weight: 400;
   margin-bottom: 40px;
 }
@@ -455,7 +414,6 @@ nav #navbar-icon {
 .container-cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  /* grid-template-rows: repeat(3, 1fr); */
   gap: 16px;
 }
 
@@ -535,20 +493,6 @@ nav #navbar-icon {
   margin-top: 16px;
 }
 
-.tittle-section {
-  grid-column: 1 / -1;
-  margin-bottom: 32px;
-}
-
-.tittle-section h2,
-.tittle-section h1 {
-  font-size: 2rem;
-}
-
-.tittle-section p {
-  font-size: 0.8rem;
-}
-
 .container-description {
   padding: 16px;
   display: flex;
@@ -568,7 +512,7 @@ nav #navbar-icon {
 }
 
 .day {
-  font-size: 1.5rem;
+  font-size: var(--font-size-title);
   margin: 0;
   padding: 10px;
   font-weight: bolder;
@@ -616,11 +560,11 @@ footer.footer {
 }
 
 .navbar-footer a {
-  font-size: 14px;
+  font-size: var(--font-size-text);
 }
 
 .footer .navbar-footer--dev {
-  font-size: 10px;
+  font-size: 8px;
   flex-wrap: wrap;
 }
 
@@ -676,7 +620,7 @@ footer.footer {
   width: 100%;
   height: 96px;
   padding: 8px;
-  font-size: 16px;
+  font-size: var(--font-size-text);
 }
 
 .field p {
@@ -726,7 +670,3 @@ footer.footer {
   margin: 0 auto;
 }
 /* Create Event Page - end */
-
-/* Event Page - start */
-
-/* Event Page - end */
