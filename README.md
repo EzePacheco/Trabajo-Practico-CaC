@@ -16,12 +16,12 @@ _Características principales:_
 
 _Tecnologías Utilizadas:_
 
-- **Front-end:** HTML, CSS, Bootstrap
+- **Front-end:** HTML, CSS, Javascript
 - **Back-end:**
 - **Base de Datos:**
 - **Despliegue:** Netifly
 
-[Enlace al Proyecto](https://mundodeeventos.netlify.app/)
+[Enlace al Proyecto en producción](https://mundodeeventos.netlify.app/)
 
 _INTEGRANTES:_
 [Emanuel Valente](https://www.linkedin.com/in/emanuel-valente/)
