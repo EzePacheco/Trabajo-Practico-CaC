@@ -23,6 +23,8 @@ _Tecnologías Utilizadas:_
 
 [Enlace al Proyecto en producción](https://mundodeeventos.netlify.app/)
 
+[Enlace al Wireframe en Figma](https://www.figma.com/design/nG3RAjIih1IJRnExXw9WYa/Ciudad-Eventos?node-id=8-104&t=Wibd6luLA7lFy5fL-1)
+
 _INTEGRANTES:_
 [Emanuel Valente](https://www.linkedin.com/in/emanuel-valente/)
 [Ezequiel Pacheco](https://www.linkedin.com/in/EzePacheco/)
