@@ -4,13 +4,11 @@ const eventsRoutes = require("../routes/eventsRoutes.js");
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.ALT_PORT || 3000;
 
 app.use("/auth", usersRoutes);
 app.use("/events", eventsRoutes);
 
-app.use(express.json());
-
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto: ${process.env.MY_PORT}`);
+  console.log(`Servidor corriendo en puerto: ${PORT}`);
 });

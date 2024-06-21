@@ -10,7 +10,7 @@ const {
 
 const router = express.Router();
 
-router.get("/events", getEvents);
+router.get("/all", getEvents);
 
 router.get("/favorites", getFavorites);
 
@@ -22,3 +22,5 @@ router.post("/create-event", createEvent);
 router.put("/update-event", updateEvent);
 
 router.delete("/delete-event", deleteEvent);
+
+module.exports = router;

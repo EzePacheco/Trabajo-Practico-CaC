@@ -1,5 +1,6 @@
 const getEvents = (req, res) => {
   console.log("Obteniendo Eventos");
+  res.json({ msg: "Listado de Eventos" });
 };
 
 const getFavorites = (req, res) => {
