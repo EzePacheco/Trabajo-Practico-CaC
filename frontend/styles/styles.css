@@ -246,6 +246,7 @@ nav #navbar-icon {
 /* Header Index - start */
 .header {
   position: relative;
+  height: 800px;
   padding-top: 60px;
   margin-bottom: 120px;
   align-items: center;
@@ -272,7 +273,8 @@ nav #navbar-icon {
 
 /* Buscador Header Desktop - start */
 .header-buscador {
-  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
   height: 120px;
   background-color: var(--black);
   grid-column: 1/-1;

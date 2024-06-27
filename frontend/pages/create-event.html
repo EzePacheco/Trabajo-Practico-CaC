@@ -28,9 +28,7 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <title>Mundo de Eventos</title>
-    <title>Mundo de eventos - Mi evento</title>
   </head>
-
   <body>
     <header class="container">
       <!-- Navigation Desktop -->
@@ -56,43 +54,64 @@
     </header>
     <main class="container">
       <section class="section-top">
-        <img src="/assets/img/event_01.png" alt="" class="event-img--detail" />
-        <div class="event-content">
-          <div class="event-text">
-            <h2>Título del evento</h2>
-            <p class="event-description">
-              Este Fin de Semana se estará presentando su nuevo disco la banda
-              TODOENUNO, junto a otros artistas invitados como ROSENEGUER, MARIA
-              JUSTO y LOS DEL TANGO.
+        <div class="section-title">
+          <h1>Crear Evento</h1>
+          <p>Puedes crear tu propio evento y publicarlo</p>
+        </div>
+        <form id="form-create" class="form-create">
+          <h2 class="form-title">
+            Completa el formulario para añadir tu evento
+          </h2>
+          <div class="field">
+            <label for="event-title">Título del evento</label>
+            <input id="event-title" type="text" name="title" />
+          </div>
+          <div class="field-set">
+            <div class="field">
+              <label for="event-date">Fecha</label
+              ><input id="event-date" type="date" name="date" />
+            </div>
+            <div class="field">
+              <label for="event-time">Hora</label
+              ><input id="event-time" type="time" name="time" />
+            </div>
+            <div class="field">
+              <label for="event-place">Lugar</label
+              ><input id="event-place" type="text" name="place" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="event-direction">Dirección</label>
+            <input id="event-direction" type="text" name="direction" />
+          </div>
+          <div class="field">
+            <label for="event-city">Ciudad</label>
+            <input id="event-city" type="text" name="city" />
+          </div>
+          <div class="field">
+            <label for="event-description">Descripción del evento</label>
+            <textarea name="description" id="event-description"></textarea>
+          </div>
+          <div class="field">
+            <label for="event-image"
+              >Añade la URL de la imagen representativa</label
+            >
+            <input id="event-image" type="text" name="image" />
+            <p>
+              UTILIZA UNA URL DE LA IMAGEN QUE QUIERES AGREGAR, PUEDES OBTENERLA
+              DESDE EL NAVEGADOR O DESDE UN HOSTING DE IMAGENES.
             </p>
           </div>
-          <div class="event-info-container">
-            <div class="event-info">
-              <div>
-                <ion-icon name="calendar-outline"></ion-icon
-                ><span>Sábado 24 de abril del 2024</span>
-              </div>
-              <div>
-                <ion-icon name="timer-outline"></ion-icon><span>22:30 hs</span>
-              </div>
-              <div>
-                <ion-icon name="walk-outline"></ion-icon
-                ><span>La Casa de Madera</span>
-              </div>
-              <div>
-                <ion-icon name="navigate-circle-outline"></ion-icon
-                ><span>Juan B. Justo 2598</span>
-              </div>
-            </div>
-            <div class="event-price">
-              <ion-icon name="ticket-outline"></ion-icon>
-              <h2>$2500,00</h2>
-            </div>
-          </div>
-        </div>
+          <input
+            type="submit"
+            value="Crear"
+            class="boton-general"
+            style="margin-top: 32px"
+          />
+        </form>
       </section>
     </main>
-    <footer class="container footer">
+    <footer class="footer">
       <h3 class="navbar-logo navbar-logo--footer">MUNDOdeEVENTOS</h3>
       <ul class="navbar-footer">
         <li>
@@ -108,7 +127,6 @@
           <a href="./contact.html">CONTACTO</a>
         </li>
       </ul>
-
 
       <ul class="navbar-footer navbar-footer--dev">
         <li>
@@ -147,7 +165,7 @@
 
       <h5>MUNDOdeEVENTOS - PROYECTO GRUPAL FULLSTACK CODO A CODO 4.0</h5>
     </footer>
-    <script type="module" src="../js/menu-mobile.js"></script>
+    <script type="module" src="../main.js"></script>
     <script type="module" src="../js/create-event.js"></script>
   </body>
 </html>
