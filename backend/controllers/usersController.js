@@ -1,20 +1,36 @@
 const db = require("../database/db");
+const jwt = require("jsonwebtoken");
+const secretKey = "mundo-eventos-2024";
 
 const loginUser = (req, res) => {
   const { email, password } = req.body;
 
-  if (email != "" && password != "") {
-    const sql = "SELECT * FROM users WHERE email = ?, password = ?";
-    db.query(sql, [email, password], (err, result) => {
+  if (email && password) {
+    const sql = "SELECT * FROM users WHERE email = ?";
+    db.query(sql, [email], (err, result) => {
       if (err) {
-        console.error(`El Usuario no existe`);
-        return;
+        console.error(`Error en la conexion en la base de datos: ${err}`);
+        return res.status(500).json({ msg: "Error en el servidor" });
       }
-      return res.status(200).json({ msg: "Datos cargados con éxito" });
-    });
-  }
 
-  throw new Error("Debes completar los campos boludito");
+      if (result.length === 0) {
+        return res.status(404).json({ msg: "Usuario no encontrado" });
+      }
+
+      const user = result[0];
+
+      if (password !== user.password) {
+        return res.status(401).json({ msg: "Contraseña incorrecta" });
+      }
+
+      const token = jwt.sign({ userId: user.id }, secretKey, {
+        expiresIn: "5h",
+      });
+      return res.status(200).json({ msg: "Usuario logueado con éxito", token });
+    });
+  } else {
+    return res.status(400).json({ msg: "Debes completar los campos" });
+  }
 };
 
 const registerUser = (req, res) => {
