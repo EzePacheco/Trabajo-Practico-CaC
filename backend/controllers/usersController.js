@@ -1,28 +1,38 @@
-const db = require("../database/db");
+const db = require("../database/db.js");
 const jwt = require("jsonwebtoken");
 const secretKey = "mundo-eventos-2024";
 
 const loginUser = (req, res) => {
+  //Desestructuramos el req.body con la info que necesitamos.
   const { email, password } = req.body;
 
+  // Si el usuario carga los campos
   if (email && password) {
-    const sql = "SELECT * FROM users WHERE email = ?";
-    db.query(sql, [email], (err, result) => {
-      if (err) {
-        console.error(`Error en la conexion en la base de datos: ${err}`);
+    // Creamos la consulta SQL para verificar el Email en la tabla Users
+    const sqlQuery = "SELECT * FROM users WHERE email = ?";
+
+    //Enviamos la consulta
+    db.query(sqlQuery, [email], (error, result) => {
+      // Manejo de error de conexion al servidor de la database
+      if (error) {
+        console.error(`Error en la conexion en la base de datos: ${error}`);
         return res.status(500).json({ msg: "Error en el servidor" });
       }
 
+      // Verificamos que el mail sea el correcto
       if (result.length === 0) {
         return res.status(404).json({ msg: "Usuario no encontrado" });
       }
 
+      // Almacenamos los datos del usuario encontrado
       const user = result[0];
 
+      // Comparamos la password enviada en req.body con la almacenada en el registro
       if (password !== user.password) {
         return res.status(401).json({ msg: "Contraseña incorrecta" });
       }
 
+      // Generamos un token con JWT con expiracion a 5hs
       const token = jwt.sign({ userId: user.id }, secretKey, {
         expiresIn: "5h",
       });
@@ -51,6 +61,7 @@ const registerUser = (req, res) => {
     }
     console.log(result);
 
+    // Validamos si el email existe:
     const emailExist = result[0].emailCount > 0;
 
     if (emailExist) {

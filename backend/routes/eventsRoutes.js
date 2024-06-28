@@ -19,7 +19,7 @@ router.get("/category/:category", getCategory);
 
 router.post("/create-event", createEvent);
 
-router.put("/update-event", updateEvent);
+router.put("/update-event/:id", updateEvent);
 
 router.delete("/delete-event", deleteEvent);
 
