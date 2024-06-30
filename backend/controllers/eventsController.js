@@ -15,7 +15,44 @@ const getEvents = (req, res) => {
 };
 
 const getFavorites = (req, res) => {
-  console.log("Obteniendo Favoritos");
+  //Obtenemos el user_id de los parametros de la query
+  const userId = req.query.user_id;
+
+  if (!userId) {
+    return res.status(400).json({ msg: "User ID es requerido" });
+  }
+
+  // Creamos la consulta
+  //e. => refiere a tabla eventos // f. => refiere a tabla favoritos // c. => refiere a tabla categorias
+  const sqlQuery = `
+    SELECT 
+      e.event_id,
+      e.title,
+      e.date,
+      e.hour,
+      e.place_name,
+      e.street,
+      e.city,
+      e.description,
+      e.image,
+      c.name AS category_name
+    FROM 
+      favorites f
+    JOIN 
+      events e ON f.event_id = e.event_id
+    JOIN 
+      categories c ON e.category_id = c.category_id
+    WHERE 
+      f.user_id = ?;
+  `;
+
+  db.query(sqlQuery, [userId], (error, result) => {
+    if (error) {
+      console.error(`Error en la conexión a la base de datos: ${error}`);
+      return res.status(500).json({ msg: "Error en el servidor" });
+    }
+    return res.status(200).json(result);
+  });
 };
 
 const getCategory = (req, res) => {

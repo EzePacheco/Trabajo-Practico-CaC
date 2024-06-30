@@ -73,37 +73,65 @@ connection.connect((error) => {
         name VARCHAR(50) NOT NULL);
         `;
 
-        const insertValuesCategories = `INSERT INTO categories(name) VALUES ('Arte y Entretenimiento'), ('Deporte'), ('Música'), ('Educativo'), ('Gastronomia'), ('Gaming'), ('Corporativo')`;
+        const createTableFavorites = `
+        CREATE TABLE IF NOT EXISTS favorites(
+        user_id INT,
+        event_id INT,
+        PRIMARY KEY (user_id, event_id),
+        FOREIGN KEY (user_id) REFERENCES users(user_id),
+        FOREIGN KEY (event_id) REFERENCES events(event_id)
+        );`;
+
+        const insertValuesCategories = `
+        INSERT IGNORE INTO categories(name) 
+        VALUES 
+        ('Arte y Entretenimiento'), 
+        ('Deporte'), 
+        ('Música'), 
+        ('Educativo'), 
+        ('Gastronomia'), 
+        ('Gaming'), 
+        ('Corporativo')`;
 
         // Pasamos las consultas de creación de tablas individualmente.
         connection.query(createTableUsers, (error, result) => {
           if (error) {
-            console.error(`Error al crear la tabla Users: ${error}`);
+            console.error(`Error al crear la tabla users: ${error}`);
             return;
           }
 
           // Exito:
-          console.log("Tabla creada con exito!");
+          console.log("Tabla usuarios creada con exito!");
         });
 
         connection.query(createTableCategories, (error, result) => {
           if (error) {
-            console.error(`Error al crear la tabla Categories: ${error}`);
+            console.error(`Error al crear la tabla categories: ${error}`);
             return;
           }
 
           // Exito:
-          console.log("Tabla creada con exito!");
+          console.log("Tabla categorias creada con exito!");
         });
 
         connection.query(createTableEvents, (error, result) => {
           if (error) {
-            console.error(`Error al crear la tabla Events: ${error}`);
+            console.error(`Error al crear la tabla events: ${error}`);
             return;
           }
 
           // Exito:
-          console.log("Tabla creada con exito!");
+          console.log("Tabla eventos creada con exito!");
+        });
+
+        connection.query(createTableFavorites, (error, result) => {
+          if (error) {
+            console.error(`Error al crear la tabla favorites: ${error}`);
+            return;
+          }
+
+          // Exito:
+          console.log("Tabla favoritos creada con exito!");
         });
 
         connection.query(insertValuesCategories, (error, result) => {
