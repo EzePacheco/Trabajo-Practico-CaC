@@ -17,9 +17,9 @@ _Características principales:_
 _Tecnologías Utilizadas:_
 
 - **Front-end:** HTML, CSS, Javascript
-- **Back-end:**
-- **Base de Datos:**
-- **Despliegue:** Netifly
+- **Back-end:** Node.js, Express, MySQL
+- **Base de Datos:** SQL
+- **Despliegue:** Netlify
 
 [Enlace al Proyecto en producción](https://mundodeeventos.netlify.app/)
 
