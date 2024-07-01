@@ -42,7 +42,7 @@ connection.connect((error) => {
 
         console.log("Conectado a la base de datos 'mundo_eventos'");
 
-        // Consultas de creación de tablas.
+        // Consultas de creación y precarga de tablas.
         const createTableUsers = `
         CREATE TABLE IF NOT EXISTS users(
         user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,15 +73,6 @@ connection.connect((error) => {
         name VARCHAR(50) NOT NULL);
         `;
 
-        const createTableFavorites = `
-        CREATE TABLE IF NOT EXISTS favorites(
-        user_id INT,
-        event_id INT,
-        PRIMARY KEY (user_id, event_id),
-        FOREIGN KEY (user_id) REFERENCES users(user_id),
-        FOREIGN KEY (event_id) REFERENCES events(event_id)
-        );`;
-
         const insertValuesCategories = `
         INSERT IGNORE INTO categories(name) 
         VALUES 
@@ -92,6 +83,15 @@ connection.connect((error) => {
         ('Gastronomia'), 
         ('Gaming'), 
         ('Corporativo')`;
+
+        const createTableFavorites = `
+        CREATE TABLE IF NOT EXISTS favorites(
+        user_id INT,
+        event_id INT,
+        PRIMARY KEY (user_id, event_id),
+        FOREIGN KEY (user_id) REFERENCES users(user_id),
+        FOREIGN KEY (event_id) REFERENCES events(event_id)
+        );`;
 
         // Pasamos las consultas de creación de tablas individualmente.
         connection.query(createTableUsers, (error, result) => {

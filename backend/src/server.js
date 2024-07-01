@@ -12,6 +12,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 8080;
 
+// Definición de rutas principales y enlace a Modulos de rutas.
 app.use("/auth", usersRoutes);
 app.use("/events", eventsRoutes);
 
