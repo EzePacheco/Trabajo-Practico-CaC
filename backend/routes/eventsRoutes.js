@@ -2,7 +2,7 @@ const express = require("express");
 const {
   getEvents,
   getFavorites,
-  getCategory,
+  getByCategory,
   createEvent,
   updateEvent,
   deleteEvent,
@@ -15,7 +15,7 @@ router.get("/all", getEvents);
 router.get("/favorites/:user_id", getFavorites);
 
 // Ver como implementar busqueda por categoria con variable en endpoint.
-router.get("/category/:category_id", getCategory);
+router.get("/category/:category_id", getByCategory);
 
 router.post("/create-event", createEvent);
 

@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const db = require("../database/db.js");
 const jwt = require("jsonwebtoken");
 const secretKey = "mundo-eventos-2024";
@@ -12,7 +13,7 @@ const loginUser = (req, res) => {
     const sqlQuery = "SELECT * FROM users WHERE email = ?";
 
     //Enviamos la consulta
-    db.query(sqlQuery, [email], (error, result) => {
+    db.query(sqlQuery, [email], async (error, result) => {
       // Manejo de error de conexion al servidor de la database
       if (error) {
         console.error(`Error en la conexion en la base de datos: ${error}`);
@@ -27,8 +28,13 @@ const loginUser = (req, res) => {
       // Almacenamos los datos del usuario encontrado
       const user = result[0];
 
+      const passwordCompared = await bcrypt.compare(
+        passwordFormulario,
+        user.password
+      );
+
       // Comparamos la password enviada en req.body con la almacenada en el registro
-      if (password !== user.password) {
+      if (!passwordCompared) {
         return res.status(401).json({ msg: "Contraseña incorrecta" });
       }
 
@@ -51,7 +57,7 @@ const registerUser = (req, res) => {
   const sqlQuery = "SELECT COUNT(*) AS emailCount FROM users WHERE email = ?";
 
   // Enviar consulta a la base de datos.
-  db.query(sqlQuery, [email], (error, result) => {
+  db.query(sqlQuery, [email], async (error, result) => {
     // Error de consulta
     if (error) {
       console.log(`Error de comunicación con la base de datos: ${error}`);
@@ -73,8 +79,12 @@ const registerUser = (req, res) => {
     const sqlQuery =
       "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
+    // Hashear password.
+    const salt = await bcrypt.genSalt(10);
+    passwordHashed = await bcrypt.hash(password, salt);
+
     // Enviar consulta a la base de datos.
-    db.query(sqlQuery, [name, email, password], (error, result) => {
+    db.query(sqlQuery, [name, email, passwordHashed], (error, result) => {
       if (error) {
         console.error(`Error al registrar usuario: ${error}`);
         return res.status(500).json({

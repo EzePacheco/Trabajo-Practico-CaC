@@ -15,7 +15,7 @@ const createEvent = (req, res) => {
     [title, date, hour, place_name, street, city, description, image],
     (error, result) => {
       if (error) {
-        console.error(`Error en la conexion en la base de datos: ${error}`);
+        console.error(`Error en la conexion con la base de datos: ${error}`);
         return res.status(500).json({ msg: "Error en el servidor" });
       }
 
@@ -40,7 +40,7 @@ const updateEvent = (req, res) => {
     [title, date, hour, place_name, street, city, description, image, event_id],
     (error, result) => {
       if (error) {
-        console.error(`Error en la conexion en la base de datos: ${error}`);
+        console.error(`Error en la conexion con la base de datos: ${error}`);
         return res.status(500).json({ msg: "Error en el servidor" });
       }
       // Verificación si se actualizó algún registro
@@ -55,7 +55,17 @@ const updateEvent = (req, res) => {
 };
 
 const deleteEvent = (req, res) => {
-  console.log("Borrando Evento...");
+  const { event_id } = req.params;
+
+  const sqlQuery = "DELETE * FROM events WHERE event_id = ?";
+
+  db.query(sqlQuery, [event_id], (error, result) => {
+    if (error) {
+      console.error(`Error en la conexión a la base de datos: ${error}`);
+      return res.status(500).json({ msg: "Error en el servidor" });
+    }
+    return res.status(200).json({ msg: "Evento borrado con exito" });
+  });
 };
 
 const getEvents = (req, res) => {
@@ -65,14 +75,29 @@ const getEvents = (req, res) => {
   // Enviamos la consulta
   db.query(sqlQuery, (error, result) => {
     if (error) {
-      console.error(`Error en la conexion en la base de datos: ${error}`);
+      console.error(`Error en la conexion con la base de datos: ${error}`);
       return res.status(500).json({ msg: "Error en el servidor" });
     }
     return res.status(200).json(result);
   });
 };
 
-const getEventsByUser = (req, res) => {};
+const getEventsByUser = (req, res) => {
+  // Desestructurramos la informacion de la petición.
+  const { user_id } = req.params;
+
+  //Creamos la consulta
+  const sqlQuery = "SELECT * FROM events WHERE user_id = ?";
+
+  // Enviamos la consulta.
+  db.query(sqlQuery, [user_id], (error, result) => {
+    if (error) {
+      console.error(`Error en la conexion con la base de datos: ${error}`);
+      return res.status(500).json({ msg: "Error en el servidor" });
+    }
+    res.status(200).json(result);
+  });
+};
 
 const addFavorites = (req, res) => {
   // Desestructuramos la información de la petición
@@ -94,9 +119,9 @@ const addFavorites = (req, res) => {
 
 const getFavorites = (req, res) => {
   //Obtenemos el user_id de los parametros de la query
-  const userId = req.query.user_id;
+  const { user_id } = req.query;
 
-  if (!userId) {
+  if (!user_id) {
     return res.status(400).json({ msg: "User ID es requerido" });
   }
 
@@ -124,7 +149,7 @@ const getFavorites = (req, res) => {
       f.user_id = ?;
   `;
 
-  db.query(sqlQuery, [userId], (error, result) => {
+  db.query(sqlQuery, [user_id], (error, result) => {
     if (error) {
       console.error(`Error en la conexión a la base de datos: ${error}`);
       return res.status(500).json({ msg: "Error en el servidor" });
@@ -133,8 +158,22 @@ const getFavorites = (req, res) => {
   });
 };
 
-const getCategory = (req, res) => {
-  console.log("Obteniendo Categoria");
+const getByCategory = (req, res) => {
+  // Desestructuramos la categoria desde req.params
+  const { category_id } = req.params;
+
+  // Creamos la consulta
+  const sqlQuery =
+    "SELECT * FROM events JOIN categories ON categories.category_id = events.category_id WHERE category_id = ? ";
+
+  // Enviamos la consulta
+  db.query(sqlQuery, [category_id], (error, result) => {
+    if (error) {
+      console.error(`Error en la conexión a la base de datos: ${error}`);
+      return res.status(500).json({ msg: "Error en el servidor" });
+    }
+    return res.status(200).json(result);
+  });
 };
 
 module.exports = {
@@ -145,5 +184,5 @@ module.exports = {
   getEventsByUser,
   addFavorites,
   getFavorites,
-  getCategory,
+  getByCategory,
 };
