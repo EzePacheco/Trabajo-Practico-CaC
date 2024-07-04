@@ -25,16 +25,16 @@ const createEvent = (req, res) => {
 };
 
 const updateEvent = (req, res) => {
-  //Desestructuracion de la info
+  //Desestructuracion de la información en la petición.
   const { event_id } = req.params;
   const { title, date, hour, place_name, street, city, description, image } =
     req.body;
 
-  // Creamos la consulta
+  // Creamos la consulta.
   const sqlQuery =
     "UPDATE events SET title = ?, date = ?, hour = ?, place_name = ?, street = ?, city = ?, description = ?, image = ? WHERE event_id = ?";
 
-  // Enviamos la consulta:
+  // Enviamos la consulta.
   db.query(
     sqlQuery,
     [title, date, hour, place_name, street, city, description, image, event_id],
@@ -43,7 +43,7 @@ const updateEvent = (req, res) => {
         console.error(`Error en la conexion con la base de datos: ${error}`);
         return res.status(500).json({ msg: "Error en el servidor" });
       }
-      // Verificación si se actualizó algún registro
+      // Verificación si se actualizó algún registro.
       if (result.affectedRows === 0) {
         return res.status(404).json({ msg: "Evento no encontrado" });
       }
@@ -55,10 +55,13 @@ const updateEvent = (req, res) => {
 };
 
 const deleteEvent = (req, res) => {
+  //Desestructuracion de la información en la petición.
   const { event_id } = req.params;
 
+  // Creamos la consulta.
   const sqlQuery = "DELETE * FROM events WHERE event_id = ?";
 
+  // Enviamos la consulta.
   db.query(sqlQuery, [event_id], (error, result) => {
     if (error) {
       console.error(`Error en la conexión a la base de datos: ${error}`);
@@ -83,10 +86,10 @@ const getEvents = (req, res) => {
 };
 
 const getEventsByUser = (req, res) => {
-  // Desestructurramos la informacion de la petición.
+  //Desestructuracion de la información en la petición.
   const { user_id } = req.params;
 
-  //Creamos la consulta
+  //Creamos la consulta.
   const sqlQuery = "SELECT * FROM events WHERE user_id = ?";
 
   // Enviamos la consulta.
@@ -100,13 +103,13 @@ const getEventsByUser = (req, res) => {
 };
 
 const addFavorites = (req, res) => {
-  // Desestructuramos la información de la petición
+  //Desestructuracion de la información en la petición.
   const { user_id, event_id } = req.body;
 
-  // Creamos la consulta
+  // Creamos la consulta.
   const sqlQuery = "INSERT INTO favorites (user_id, event_id) VALUES (?,?)";
 
-  // Enviamos la consulta
+  // Enviamos la consulta.
   db.query(sqlQuery, [user_id, event_id], (error, result) => {
     if (error) {
       console.error(`Error en la conexion en la base de datos: ${error}`);
@@ -118,14 +121,15 @@ const addFavorites = (req, res) => {
 };
 
 const getFavorites = (req, res) => {
-  //Obtenemos el user_id de los parametros de la query
+  //Desestructuracion de la información en la petición.
   const { user_id } = req.query;
 
+  // Verificamos que se haya ingresado un id.
   if (!user_id) {
     return res.status(400).json({ msg: "User ID es requerido" });
   }
 
-  // Creamos la consulta
+  // Creamos la consulta.
   //e. => refiere a tabla eventos // f. => refiere a tabla favoritos // c. => refiere a tabla categorias
   const sqlQuery = `
     SELECT 
@@ -149,6 +153,7 @@ const getFavorites = (req, res) => {
       f.user_id = ?;
   `;
 
+  // Enviamos la consulta.
   db.query(sqlQuery, [user_id], (error, result) => {
     if (error) {
       console.error(`Error en la conexión a la base de datos: ${error}`);
@@ -158,15 +163,40 @@ const getFavorites = (req, res) => {
   });
 };
 
-const getByCategory = (req, res) => {
-  // Desestructuramos la categoria desde req.params
-  const { category_id } = req.params;
+const deleteFavorite = (req, res) => {
+  //Desestructuracion de la información en la petición.
+  const { favorite_id } = req.params;
+
+  if (!favorite_id) {
+    const error = new Error("Id de evento falta o es inválido.");
+    return res.status(403).json({ msg: error.message });
+  }
 
   // Creamos la consulta
+  const sqlQuery = "DELETE * FROM favorites WHERE favorite_id = ?";
+
+  // Enviamos la consulta
+  db.query(sqlQuery, [favorite_id], (error, result) => {
+    if (error) {
+      console.error(`Error en la conexión a la base de datos: ${error}`);
+      return res.status(500).json({ msg: "Error en el servidor" });
+    }
+
+    return res
+      .status(200)
+      .json({ msg: "El evento se ha quitado de favoritos correctamente." });
+  });
+};
+
+const getByCategory = (req, res) => {
+  //Desestructuracion de la información en la petición.
+  const { category_id } = req.params;
+
+  // Creamos la consulta.
   const sqlQuery =
     "SELECT * FROM events JOIN categories ON categories.category_id = events.category_id WHERE category_id = ? ";
 
-  // Enviamos la consulta
+  // Enviamos la consulta.
   db.query(sqlQuery, [category_id], (error, result) => {
     if (error) {
       console.error(`Error en la conexión a la base de datos: ${error}`);
@@ -182,7 +212,8 @@ module.exports = {
   deleteEvent,
   getEvents,
   getEventsByUser,
+  getByCategory,
   addFavorites,
   getFavorites,
-  getByCategory,
+  deleteFavorite,
 };
