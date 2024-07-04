@@ -2,24 +2,45 @@ const db = require("../database/db.js");
 
 const createEvent = (req, res) => {
   // Desestructuramos la informacion del formulario.
-  const { title, date, hour, place_name, street, city, description, image } =
-    req.body;
+  const {
+    user_id,
+    title,
+    date,
+    hour,
+    place_name,
+    street,
+    city,
+    description,
+    image,
+    category_id,
+  } = req.body;
 
   // Creamos la consulta:
   const sqlQuery =
-    "INSERT INTO events (title, date, hour, place_name, street, city, description, image) VALUES (?,?,?,?,?,?,?,?)";
+    "INSERT INTO events (title, date, hour, place_name, street, city, description, image, user_id, category_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
   // Enviamos la consulta:
   db.query(
     sqlQuery,
-    [title, date, hour, place_name, street, city, description, image],
+    [
+      title,
+      date,
+      hour,
+      place_name,
+      street,
+      city,
+      description,
+      image,
+      user_id,
+      category_id,
+    ],
     (error, result) => {
       if (error) {
         console.error(`Error en la conexion con la base de datos: ${error}`);
         return res.status(500).json({ msg: "Error en el servidor" });
       }
 
-      return res.status(200).json(result);
+      return res.status(200).json({ msg: "Evento creado con exito!" });
     }
   );
 };
@@ -59,7 +80,7 @@ const deleteEvent = (req, res) => {
   const { event_id } = req.params;
 
   // Creamos la consulta.
-  const sqlQuery = "DELETE * FROM events WHERE event_id = ?";
+  const sqlQuery = "DELETE FROM events WHERE event_id = ?";
 
   // Enviamos la consulta.
   db.query(sqlQuery, [event_id], (error, result) => {
@@ -122,7 +143,7 @@ const addFavorites = (req, res) => {
 
 const getFavorites = (req, res) => {
   //Desestructuracion de la información en la petición.
-  const { user_id } = req.query;
+  const { user_id } = req.params;
 
   // Verificamos que se haya ingresado un id.
   if (!user_id) {
@@ -194,7 +215,7 @@ const getByCategory = (req, res) => {
 
   // Creamos la consulta.
   const sqlQuery =
-    "SELECT * FROM events JOIN categories ON categories.category_id = events.category_id WHERE category_id = ? ";
+    "SELECT * FROM events JOIN categories ON events.category_id = categories.category_id WHERE events.category_id = ? ";
 
   // Enviamos la consulta.
   db.query(sqlQuery, [category_id], (error, result) => {

@@ -28,10 +28,7 @@ const loginUser = (req, res) => {
       // Almacenamos los datos del usuario encontrado
       const user = result[0];
 
-      const passwordCompared = await bcrypt.compare(
-        passwordFormulario,
-        user.password
-      );
+      const passwordCompared = await bcrypt.compare(password, user.password);
 
       // Comparamos la password enviada en req.body con la almacenada en el registro
       if (!passwordCompared) {
@@ -75,26 +72,38 @@ const registerUser = (req, res) => {
       return res.status(404).json({ msg: "El email ya ha sido registrado." });
     }
 
-    // Si el usuario no existe crear nuevo registro.
-    const sqlQuery =
-      "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    try {
+      // Si el usuario no existe crear nuevo registro.
+      const sqlQuery =
+        "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
 
-    // Hashear password.
-    const salt = await bcrypt.genSalt(10);
-    passwordHashed = await bcrypt.hash(password, salt);
+      // Hashear password.
+      const salt = await bcrypt.genSalt(1);
+      let passwordHashed = await bcrypt.hash(password, salt);
 
-    // Enviar consulta a la base de datos.
-    db.query(sqlQuery, [name, email, passwordHashed], (error, result) => {
-      if (error) {
-        console.error(`Error al registrar usuario: ${error}`);
-        return res.status(500).json({
-          msg: `Error de comunicación con la base de datos: ${error}`,
-        });
-      }
+      console.log("Hashed Password:", passwordHashed);
+      console.log("Hashed Password Length:", passwordHashed.length);
 
-      console.log("Datos cargados con éxito: Usuario Registrado");
-      return res.status(200).json({ msg: "Usuario registrado exitosamente." });
-    });
+      // Enviar consulta a la base de datos.
+      db.query(sqlQuery, [name, email, passwordHashed], (error, result) => {
+        if (error) {
+          console.error(`Error al registrar usuario: ${error}`);
+          return res.status(500).json({
+            msg: `Error de comunicación con la base de datos: ${error}`,
+          });
+        }
+
+        console.log("Datos cargados con éxito: Usuario Registrado");
+        return res
+          .status(200)
+          .json({ msg: "Usuario registrado exitosamente." });
+      });
+    } catch (error) {
+      console.error(`Error: ${error}`);
+      return res.status(500).json({
+        msg: `Error en el servidor: ${error}`,
+      });
+    }
   });
 };
 

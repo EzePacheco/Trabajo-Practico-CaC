@@ -48,7 +48,7 @@ connection.connect((error) => {
         user_id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(50) NOT NULL,
         email VARCHAR(45) NOT NULL,
-        password VARCHAR(45) NOT NULL
+        password VARCHAR(100) NOT NULL
         );`;
 
         const createTableEvents = `CREATE TABLE IF NOT EXISTS events(
@@ -86,9 +86,10 @@ connection.connect((error) => {
 
         const createTableFavorites = `
         CREATE TABLE IF NOT EXISTS favorites(
+        favorite_id INT AUTO_INCREMENT,
         user_id INT,
         event_id INT,
-        PRIMARY KEY (user_id, event_id),
+        PRIMARY KEY (favorite_id),
         FOREIGN KEY (user_id) REFERENCES users(user_id),
         FOREIGN KEY (event_id) REFERENCES events(event_id)
         );`;
