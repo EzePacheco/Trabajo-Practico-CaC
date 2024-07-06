@@ -163,7 +163,8 @@ const getFavorites = (req, res) => {
       e.city,
       e.description,
       e.image,
-      c.name AS category_name
+      c.name AS category_name,
+      f.favorite_id
     FROM 
       favorites f
     JOIN 
@@ -186,6 +187,7 @@ const getFavorites = (req, res) => {
 
 const deleteFavorite = (req, res) => {
   //Desestructuracion de la información en la petición.
+  const { user_id } = req.body;
   const { favorite_id } = req.params;
 
   if (!favorite_id) {
@@ -194,10 +196,11 @@ const deleteFavorite = (req, res) => {
   }
 
   // Creamos la consulta
-  const sqlQuery = "DELETE * FROM favorites WHERE favorite_id = ?";
+  const sqlQuery =
+    "DELETE FROM favorites WHERE user_id = ? AND favorite_id = ?";
 
   // Enviamos la consulta
-  db.query(sqlQuery, [favorite_id], (error, result) => {
+  db.query(sqlQuery, [user_id, favorite_id], (error, result) => {
     if (error) {
       console.error(`Error en la conexión a la base de datos: ${error}`);
       return res.status(500).json({ msg: "Error en el servidor" });
